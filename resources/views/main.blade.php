@@ -5,6 +5,8 @@
 
     @include('partials._head')
 
+    @yield('styles')
+
   </head>
 
   <body style="text-align: right;">
@@ -18,6 +20,8 @@
     </div><!-- End of Container -->
 
     @include('partials._scripts')
+
+    @yield('scripts')
 
   </body>
 
