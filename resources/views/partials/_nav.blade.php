@@ -6,11 +6,11 @@
   <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
 
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"><i class="fa fa-home fa-fw fa-lg"></i> الصفحة الرئيسية<span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('/') ? "active" : "" }}" href="/"><i class="fa fa-home fa-fw fa-lg"></i> الصفحة الرئيسية</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/about">من نحن</a>
+        <a class="nav-link {{ Request::is('about') ? "active" : "" }}" href="/about">من نحن</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">المشاريع</a>
@@ -19,7 +19,7 @@
         <a class="nav-link" href="#">الخدمات</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/contact">تواصل معنا</a>
+        <a class="nav-link {{ Request::is('contact') ? "active" : "" }}" href="/contact">تواصل معنا</a>
       </li>
     </ul>
     <ul class="btn-group mr-auto my-0" dir="ltr">

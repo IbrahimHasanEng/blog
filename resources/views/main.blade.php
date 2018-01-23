@@ -1,3 +1,11 @@
+<?php
+
+use Jenssegers\Date\Date;
+
+Date::setLocale('ar');
+
+?>
+
 <!doctype html>
 <html lang="ar" dir="rtl">
 

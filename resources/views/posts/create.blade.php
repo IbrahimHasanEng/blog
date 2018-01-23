@@ -13,15 +13,16 @@
 {!! Form::open(array('route' => 'posts.store', 'data-parsley-validate' => '')) !!}
 
   {{ Form::label('title', 'عنوان المقال:') }}
-  {{ Form::text('title', null, array('class' => 'form-control', 'placeholder' => 'اكتب عنوان المقال هنا', 'required' => '', 'maxlength' => '100')) }}
+  {{ Form::text('title', null, array('class' => 'form-control', 'placeholder' => 'اكتب عنوان المقال هنا')) }}
 <br>
   {{ Form::label('body', 'محتوى المقال:') }}
-  {{ Form::textarea('body', null, array('class' => 'form-control textarea', 'placeholder' => 'اكتب المقال هنا', 'required' => '')) }}
+  {{ Form::textarea('body', null, array('class' => 'form-control', 'placeholder' => 'اكتب المقال هنا')) }}
 <br>
   {{ Form::submit('انشر المقال', array('class' => 'btn btn-primary btn-block')) }}
 
 {!! Form::close() !!}
-
+<br>
+@include('partials._messages')
 @endsection
 
 @section('scripts')
