@@ -22,7 +22,6 @@
 
 {!! Form::close() !!}
 <br>
-@include('partials._messages')
 @endsection
 
 @section('scripts')

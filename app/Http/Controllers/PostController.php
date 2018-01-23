@@ -93,8 +93,8 @@ class PostController extends Controller
     {
         //
         $this->validate($request, array(
-          'title' => 'required',
-          'body' => 'required|max:255'
+          'title' => 'required|max:255',
+          'body' => 'required'
         ));
 
         $post = Post::find($id);
@@ -117,5 +117,12 @@ class PostController extends Controller
     public function destroy($id)
     {
         //
+        $post = Post::find($id);
+
+        $post->delete();
+
+        Session::flash('success', 'تم حذف المقال بنجاح');
+
+        return redirect()->route('posts.index');
     }
 }

@@ -22,7 +22,7 @@ Date::setLocale('ar');
     @include('partials._nav')
 
     <div class="container mt-4">
-
+      @include('partials._messages')
       @yield('content')
 
     </div><!-- End of Container -->

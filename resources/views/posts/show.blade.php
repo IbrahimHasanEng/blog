@@ -7,7 +7,6 @@
 @endsection
 
 @section('content')
-@include('partials._messages')
 <div class="container">
   <div class="row">
     <div class="col-8">
@@ -32,7 +31,9 @@
               {!! Html::linkRoute('posts.edit', 'تعديل', array($post->id), array('class' => 'btn btn-primary btn-block')) !!}
             </div>
             <div class="col-6">
-              {!! Html::linkRoute('posts.destroy', 'حذف', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
+              {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE']) !!}
+              {!! Form::submit('حذف', ['class' => 'btn btn-danger btn-block']) !!}
+              {!! Form::close() !!}
             </div>
           </div>
         </div>

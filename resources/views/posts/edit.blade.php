@@ -7,7 +7,6 @@
 @endsection
 
 @section('content')
-@include('partials._messages')
 <div class="container">
   <div class="row">
     <div class="col-8">
