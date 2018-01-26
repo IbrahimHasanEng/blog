@@ -39,4 +39,5 @@ var editor_config = {
 };
 
 tinymce.init(editor_config);
+
 </script>﻿

@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+
 <div class="container">
   <div class="row">
     <div class="col-8">
@@ -17,14 +18,13 @@
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">تفاصيل المقال</h5>
-          <dl class="row">
-            <dt class="col-6">تاريخ الإنشاء:</dt>
-            <dd class="col-6">{{ Date::parse(strtotime($post->created_at))->format('j F، Y الساعة H:i') }}</dd>
-          </dl>
-          <dl class="row">
-            <dt class="col-6">تاريخ التعديل:</dt>
-            <dd class="col-6">{{ Date::parse(strtotime($post->updated_at))->format('j F، Y الساعة H:i') }}</dd>
-          </dl>
+          <hr>
+            <h6>رابط المقال:</h6>
+            <p dir="ltr"><a href="{{ url($post->slug) }}">{{ mb_substr(url($post->slug), 0, 30) }}{{ strlen(url($post->slug)) > 30 ? "..." : "" }}</a></p>
+            <h6>تاريخ الإنشاء:</h6>
+            <p>{{ Date::parse(strtotime($post->created_at))->format('الساعة H:i من j F، Y') }}</p>
+            <h6>تاريخ التعديل:</h6>
+            <p>{{ Date::parse(strtotime($post->updated_at))->format('الساعة H:i من j F، Y') }}</p>
           <hr>
           <div class="row">
             <div class="col-6">

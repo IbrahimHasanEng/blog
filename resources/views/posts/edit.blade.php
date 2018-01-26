@@ -16,6 +16,10 @@
         {{ Form::text('title', null, array('class' => 'form-control form-control-lg')) }}
       </div>
       <div class="form-group">
+        {{ Form::label('slug', 'سلاغ') }}
+        {{ Form::text('slug', null, array('class' => 'form-control form-control-lg')) }}
+      </div>
+      <div class="form-group">
         {{ Form::label('body', 'محتوى المقال:') }}
         {{ Form::textarea('body', null, array('class' => 'form-control')) }}
       </div>
@@ -24,14 +28,12 @@
       <div class="card" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">تفاصيل المقال</h5>
-          <dl class="row">
-            <dt class="col-6">تاريخ الإنشاء:</dt>
-            <dd class="col-6">{{ Date::parse(strtotime($post->created_at))->format('j F، Y الساعة H:i') }}</dd>
-          </dl>
-          <dl class="row">
-            <dt class="col-6">تاريخ التعديل:</dt>
-            <dd class="col-6">{{ Date::parse(strtotime($post->updated_at))->format('j F، Y الساعة H:i') }}</dd>
-          </dl>
+          <hr>
+            <h6>تاريخ الإنشاء:</h6>
+            <p>{{ Date::parse(strtotime($post->created_at))->format('الساعة H:i من j F، Y') }}</p>
+
+            <h6>تاريخ التعديل:</h6>
+            <p>{{ Date::parse(strtotime($post->updated_at))->format('الساعة H:i من j F، Y') }}</p>
           <hr>
           <div class="row">
             <div class="col-6">
