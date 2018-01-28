@@ -40,4 +40,13 @@ var editor_config = {
 
 tinymce.init(editor_config);
 
+function ConfirmDelete()
+  {
+  var x = confirm("هل أنت متأكد أنك تريد حذف المقال؟");
+  if (x)
+    return true;
+  else
+    return false;
+  }
+
 </script>﻿

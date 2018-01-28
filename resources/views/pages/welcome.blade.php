@@ -17,7 +17,7 @@
 
       <div class="post">
         <h3>{{ $post->title }}</h3>
-        <p class="lead">{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
+        <p class="lead">{{ mb_substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
         <a class="btn btn-primary" href"#">اقرأ المزيد</a>
       </div>
 

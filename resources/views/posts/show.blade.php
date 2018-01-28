@@ -31,7 +31,7 @@
               {!! Html::linkRoute('posts.edit', 'تعديل', array($post->id), array('class' => 'btn btn-primary btn-block')) !!}
             </div>
             <div class="col-6">
-              {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE']) !!}
+              {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()']) !!}
               {!! Form::submit('حذف', ['class' => 'btn btn-danger btn-block']) !!}
               {!! Form::close() !!}
             </div>
