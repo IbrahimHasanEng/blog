@@ -16,7 +16,7 @@
         {{ Form::text('title', null, array('class' => 'form-control form-control-lg')) }}
       </div>
       <div class="form-group">
-        {{ Form::label('slug', 'سلاغ') }}
+        {{ Form::label('slug', 'العنوان الذي سيظهر في الرابط') }}
         {{ Form::text('slug', null, array('class' => 'form-control form-control-lg')) }}
       </div>
       <div class="form-group">
