@@ -18,3 +18,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'PagesController@getIndex');
     Route::resource('posts', 'PostController');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

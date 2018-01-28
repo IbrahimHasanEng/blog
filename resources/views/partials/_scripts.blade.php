@@ -1,7 +1,6 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ URL::asset('js/tinymce/tinymce.min.js') }}"></script>
 <script>
 var editor_config = {
