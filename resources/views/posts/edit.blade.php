@@ -21,11 +21,11 @@
       </div>
       <div class="form-group">
         {{ Form::label('body', 'محتوى المقال:') }}
-        {{ Form::textarea('body', null, array('class' => 'form-control')) }}
+        {{ Form::textarea('body', null, array('id' => 'article-ckeditor', 'class' => 'form-control')) }}
       </div>
     </div>
     <div class="col-4">
-      <div class="card" style="width: 18rem;">
+      <div class="card">
         <div class="card-body">
           <h5 class="card-title">تفاصيل المقال</h5>
           <hr>

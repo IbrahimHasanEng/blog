@@ -21,7 +21,7 @@
 </div>
 <div class="form-group">
   {{ Form::label('body', 'محتوى المقال:') }}
-  {{ Form::textarea('body', null, array('class' => 'form-control', 'placeholder' => 'اكتب المقال هنا', 'required' => '', 'minlength' => '150')) }}
+  {{ Form::textarea('body', null, array('id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'اكتب المقال هنا', 'required' => '', 'minlength' => '150')) }}
 </div>
   {{ Form::submit('انشر المقال', array('class' => 'btn btn-primary btn-block')) }}
 

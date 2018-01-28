@@ -12,10 +12,10 @@
   <div class="row">
     <div class="col-8">
       <h1>{{ $post->title }}</h1>
-      <p class="lead">{{ $post->body }}</p>
+      <p class="lead">{!! $post->body !!}</p>
     </div>
     <div class="col-4">
-      <div class="card" style="width: 18rem;">
+      <div class="card">
         <div class="card-body">
           <h5 class="card-title">تفاصيل المقال</h5>
           <hr>
