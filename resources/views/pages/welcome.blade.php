@@ -17,8 +17,8 @@
 
       <div class="post">
         <h3>{{ $post->title }}</h3>
-        <p class="lead">{{ mb_substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
-        <a class="btn btn-primary" href"#">اقرأ المزيد</a>
+        <p class="lead">{!! mb_substr($post->body, 0, 300) !!}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
+        {!! Html::linkRoute('posts.show', 'اقرأ المزيد', array($post->id), array('class' => 'btn btn-primary btn-sm')) !!}
       </div>
 
       <hr>

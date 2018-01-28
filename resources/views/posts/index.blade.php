@@ -24,7 +24,7 @@
       <tr>
         <th scope="row">{{ $post->id }}</th>
         <td>{{ $post->title }}</td>
-        <td>{{ mb_substr($post->body, 0, 50) }}{{ strlen($post->body) >= 50 ? "..." : "" }}</td>
+        <td>{!! mb_substr($post->body, 0, 50) !!}{{ strlen($post->body) >= 50 ? "..." : "" }}</td>
         <td>{{ Date::parse(strtotime($post->created_at))->format('j F، Y') }}</td>
         <td>
           <a href="{{ route('posts.show', $post->id) }}" class="btn btn-link btn-sm">عرض</a>
