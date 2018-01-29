@@ -1,7 +1,6 @@
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="{{ URL::asset('js/tinymce/tinymce.min.js') }}"></script>
 <script>
 
 function ConfirmDelete()

@@ -21,11 +21,18 @@ Date::setLocale('ar');
 
     @include('partials._nav')
 
+    @yield('carousel')
+
     <div class="container mt-4">
       @include('partials._messages')
       @yield('content')
 
     </div><!-- End of Container -->
+
+    <footer>
+      <hr>
+      <p id="app"></p>
+    </footer>
 
     @include('partials._scripts')
 

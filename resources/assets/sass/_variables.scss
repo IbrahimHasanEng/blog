@@ -15,12 +15,16 @@ $success: #2ab27b;
 $warning: #cbb956;
 $danger: #bf5329;
 
-// Typography
-$font-family-sans-serif: "Raleway", sans-serif;
+/*!
+ * External fonts
+ */
 @font-face {
     font-family: GE;
     src: url('/fonts/GE_SS_Two_Light.otf');
 }
+
+// Typography
+$font-family-sans-serif: sans-serif;
 $font-arabic-headings: GE;
 $font-size-base: .875rem; // 14px
 $line-height-base: 1.6;

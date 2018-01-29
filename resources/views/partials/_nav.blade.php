@@ -10,7 +10,7 @@
         <a class="nav-link {{ Request::is('/') ? "active" : "" }}" href="/"><i class="fa fa-home fa-fw fa-lg"></i> الصفحة الرئيسية</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('blog') ? "active" : "" }}" href="/">مقالاتنا</a>
+        <a class="nav-link {{ Request::is('blog') ? "active" : "" }}" href="/blog">مقالاتنا</a>
       </li>
       <li class="nav-item">
         <a class="nav-link {{ Request::is('about') ? "active" : "" }}" href="/about">من نحن</a>
