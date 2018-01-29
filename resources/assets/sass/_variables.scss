@@ -17,6 +17,11 @@ $danger: #bf5329;
 
 // Typography
 $font-family-sans-serif: "Raleway", sans-serif;
+@font-face {
+    font-family: GE;
+    src: url('/fonts/GE_SS_Two_Light.otf');
+}
+$font-arabic-headings: GE;
 $font-size-base: .875rem; // 14px
 $line-height-base: 1.6;
 $text-color: #636b6f;

@@ -24,7 +24,7 @@
           <br>
           <div class="row">
             <div class="col-12">
-              {!! Html::linkRoute('posts.index', 'جميع المقالات <<', array(), array('class' => 'btn btn-secondary btn-block')) !!}
+              {!! Html::linkRoute('blog.index', 'جميع المقالات <<', array(), array('class' => 'btn btn-secondary btn-block')) !!}
             </div>
           </div>
         </div>
