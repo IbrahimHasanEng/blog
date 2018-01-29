@@ -18,7 +18,7 @@
             <p class="card-text">{!! mb_substr($post->body, 0, 90) !!}{{ strlen($post->body) > 90 ? "..." : "" }}</p>
             <div>
               <hr>
-              <a href="{{ route('blog.single', $post->slug) }}" class="btn btn-primary btn-sm">اقرأ المزيد</a>
+              <a href="{{ route('blog.single', $post->id) }}" class="btn btn-primary btn-sm">اقرأ المزيد</a>
             </div>
           </div>
         </div>

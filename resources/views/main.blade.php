@@ -31,7 +31,10 @@ Date::setLocale('ar');
 
     <footer>
       <hr>
-      <p id="app"></p>
+      <div id="app" class="text-center">
+        {{-- <example-component></example-component> --}}
+      جميع الحقوق محفوظة 2018 &copy; ابراهيم حسن
+      </div>
     </footer>
 
     @include('partials._scripts')

@@ -26,16 +26,16 @@
       </li>
     </ul>
     <ul class="btn-group mr-auto my-0" dir="ltr">
-      <button type="button" class="btn btn-danger">حسابي</button>
+      <button type="button" class="btn btn-danger" dir="rtl">أهلاً ابراهيم!</button>
       <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-chevron-down"></i>
         <span class="sr-only">Toggle Dropdown</span>
       </button>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Action</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
+      <div class="dropdown-menu text-right bg-dark">
+        <a class="dropdown-item" href="{{ route('posts.index') }}">المقالات</a>
+        <a class="dropdown-item" href="{{ route('posts.create') }}">إنشاء مقال جديد</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Separated link</a>
+        <a class="dropdown-item" href="#">تسجيل الخروج</a>
       </div>
     </ul>
   </div>

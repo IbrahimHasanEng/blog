@@ -1,11 +1,17 @@
 // Fonts
 // @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
+// Font Awesome
+@import "node_modules/font-awesome/scss/font-awesome.scss";
+
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
+
+// Bootstrap Overwrite
+@import "bootstrap-overwrite";
 
 // Headings
 @import "headings";

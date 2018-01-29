@@ -47,8 +47,17 @@ class PostController extends Controller
         ));
 
         $post = new Post;
+        
         $post->title = $request->title;
         $post->slug = $request->slug;
+        $valid  = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~!*\'();:@&=+$,/?#[]%";
+        $length = strlen($post->slug);
+
+        for ($i = 0; $i < $length; $i++) {
+            $character = $request->slug[$i];
+            $post->slug   .= (strpos($valid, $character) === FALSE ? rawurlencode($character) : $character);
+        }
+
         $post->body = $request->body;
 
         $post->save();
@@ -111,7 +120,17 @@ class PostController extends Controller
         $post = Post::find($id);
 
         $post->title = $request->input('title');
-        $post->slug = $request->input('slug');
+
+        $post->title = $request->title;
+        $post->slug = $request->slug;
+        $valid  = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~!*\'();:@&=+$,/?#[]%";
+        $length = strlen($post->slug);
+
+        for ($i = 0; $i < $length; $i++) {
+            $character = $request->slug[$i];
+            $post->slug   .= (strpos($valid, $character) === FALSE ? rawurlencode($character) : $character);
+        }
+
         $post->body = $request->input('body');
 
         $post->save();
