@@ -1,4 +1,4 @@
-@extends('main')
+@extends('layouts.app')
 
 @section('title', "- جميع المقالات")
 
@@ -15,7 +15,7 @@
               <h6 class="card-subtitle mb-2 text-muted">ابراهيم حسن</h6>
               <hr>
             </div>
-            <p class="card-text">{!! mb_substr(strip_tags($post->body), 0, 90) !!}{{ strlen(strip_tags($post->body)) > 100 ? "..." : "" }}</p>
+            <p class="card-text">{!! mb_substr(strip_tags($post->body), 0, 90) !!}{{ strlen(strip_tags($post->body)) > 90 ? "..." : "" }}</p>
             <div>
               <hr>
               <a href="{{ route('blog.single', $post->id) }}" class="btn btn-primary btn-sm">اقرأ المزيد</a>

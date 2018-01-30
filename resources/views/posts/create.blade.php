@@ -1,4 +1,4 @@
-@extends('main')
+@extends('layouts.app')
 
 @section('title', '- مقال جديد')
 
@@ -32,4 +32,10 @@
 @section('scripts')
   {!! Html::script('js/parsley.min.js') !!}
   {!! Html::script('js/parsley-lang/ar.js') !!}
+  {!! Html::script('vendor/ckeditor/ckeditor.js') !!}
+  <script>
+      CKEDITOR.replace('article-ckeditor', {
+          language: 'ar'
+      });
+  </script>
 @endsection

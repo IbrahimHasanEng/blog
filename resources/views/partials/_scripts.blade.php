@@ -12,14 +12,4 @@ function ConfirmDelete()
     return false;
   }
 
-</script>﻿
-
-<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-<script>
-  CKEDITOR.replace( 'article-ckeditor', {
-      language: 'ar'
-    } );
-
-  CKEDITOR.replace( 'article-ckeditor' );
-
 </script>
