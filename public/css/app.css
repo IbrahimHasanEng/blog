@@ -3062,6 +3062,11 @@
   src: url("/fonts/GE_SS_Two_Light.otf");
 }
 
+@font-face {
+  font-family: Palatino;
+  src: url("/fonts/Bahij-Palatino-Sans-Arabic-Regular.ttf");
+}
+
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -13060,6 +13065,15 @@ a.text-dark:focus {
 
 .dropdown-toggle-split::after {
   display: none;
+}
+
+.lead {
+  font-family: Palatino;
+  font-size: 1.5rem;
+}
+
+.card-text {
+  margin-bottom: 0;
 }
 
 h1,

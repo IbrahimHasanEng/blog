@@ -32,6 +32,7 @@
 @endsection
 
 @section('content')
+  <h1 class="display-3 my-5 text-primary">أحدث المقالات</h1>
   <div class="row justify-content-between">
     <div class="col-md-8">
 
@@ -39,9 +40,12 @@
 
       <div class="post mb-5">
         <h3>{{ $post->title }}</h3>
-        <p class="lead">{!! mb_substr($post->body, 0, 300) !!}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
-        {!! Html::linkRoute('blog.single', 'اقرأ المزيد', array($post->id), array('class' => 'btn btn-primary btn-sm')) !!}
+        <div class="my-3">{!! mb_substr(strip_tags($post->body), 0, 300) !!}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</div>
+        {!! Html::linkRoute('blog.single', 'تابع القراءة', array($post->id), array('class' => 'btn btn-primary btn-sm')) !!}
         <hr>
+        <?php
+        
+          ?>
       </div>
 
     @endforeach

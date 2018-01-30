@@ -4,7 +4,6 @@
 
 @section('content')
 
-<div class="container">
   <div class="row d-flex align-items-stretch flex-wrap">
     @foreach($posts as $post)
       <div class="col-4 mb-4">
@@ -16,7 +15,7 @@
               <h6 class="card-subtitle mb-2 text-muted">ابراهيم حسن</h6>
               <hr>
             </div>
-            <p class="card-text">{!! mb_substr($post->body, 0, 90) !!}{{ strlen($post->body) > 90 ? "..." : "" }}</p>
+            <p class="card-text">{!! mb_substr(strip_tags($post->body), 0, 90) !!}{{ strlen(strip_tags($post->body)) > 100 ? "..." : "" }}</p>
             <div>
               <hr>
               <a href="{{ route('blog.single', $post->id) }}" class="btn btn-primary btn-sm">اقرأ المزيد</a>
@@ -26,6 +25,9 @@
       </div>
     @endforeach
   </div>
-</div>
+
+  <div class="d-flex justify-content-center">
+    {!! $posts->links(); !!}
+  </div>
 
 @endsection

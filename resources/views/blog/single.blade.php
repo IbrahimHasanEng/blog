@@ -4,11 +4,11 @@
 
 @section('content')
 
-<div class="container">
   <div class="row">
     <div class="col-8">
-      <h1>{{ $post->title }}</h1>
-      <p class="lead">{!! $post->body !!}</p>
+      <h1 class="mt-4">{{ $post->title }}</h1>
+      <hr>
+      <div class="lead">{!! $post->body !!}</div>
     </div>
     <div class="col-4">
       <div class="card">
@@ -31,7 +31,6 @@
       </div>
     </div>
   </div>
-</div>
 
 @endsection
 

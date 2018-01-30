@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">تسجيل الدخول</div>
                 <div class="card-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                    <form lang="ar" class="form-horizontal" method="POST" action="{{ route('login') }}" novalidate>
                         {{ csrf_field() }}
 
                         <div class="form-group row">
