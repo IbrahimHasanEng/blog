@@ -11,6 +11,7 @@
         <div class="card h-100">
           <div class="card-body d-flex flex-column justify-content-between">
             <div>
+              <small>{{ Date::parse(strtotime($post->created_at))->format('j F، Y') }}</small>
               <h5 class="card-title">{{ $post->title }}</h5>
               <h6 class="card-subtitle mb-2 text-muted">ابراهيم حسن</h6>
               <hr>

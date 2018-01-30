@@ -1,17 +1,17 @@
-@extends('layouts.app')
+@extends('main')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-md-center mt-5">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Register</div>
+                <div class="card-header">إنشاء حساب جديد</div>
                 <div class="card-body">
                     <form role="form" method="POST" action="{{ url('/register') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group row">
-                            <label class="col-lg-4 col-form-label text-lg-right">Name</label>
+                            <label class="col-lg-4 col-form-label text-lg-right">الاسم</label>
 
                             <div class="col-lg-6">
                                 <input
@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-lg-4 col-form-label text-lg-right">E-Mail Address</label>
+                            <label class="col-lg-4 col-form-label text-lg-right">البريد الالكتروني</label>
 
                             <div class="col-lg-6">
                                 <input
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-lg-4 col-form-label text-lg-right">Password</label>
+                            <label class="col-lg-4 col-form-label text-lg-right">كلمة المرور</label>
 
                             <div class="col-lg-6">
                                 <input
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label class="col-lg-4 col-form-label text-lg-right">Confirm Password</label>
+                            <label class="col-lg-4 col-form-label text-lg-right">تأكيد كلمة المرور</label>
 
                             <div class="col-lg-6">
                                 <input
@@ -88,7 +88,7 @@
                         <div class="form-group row">
                             <div class="col-lg-6 offset-lg-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Register
+                                    إنشاء الحساب
                                 </button>
                             </div>
                         </div>

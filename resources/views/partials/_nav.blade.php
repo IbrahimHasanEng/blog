@@ -25,8 +25,12 @@
         <a class="nav-link {{ Request::is('contact') ? "active" : "" }}" href="/contact">تواصل معنا</a>
       </li>
     </ul>
-    <ul class="btn-group mr-auto my-0" dir="ltr">
-      <button type="button" class="btn btn-danger" dir="rtl">أهلاً ابراهيم!</button>
+    <ul class="btn-group mr-auto my-0 navbar-nav" dir="ltr">
+      @if (Auth::guest())
+          <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">تسجيل الدخول</a></li>
+          <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">إنشاء حساب جديد</a></li>
+      @else
+      <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="عرض الملف الشخصي" dir="rtl">أهلاً {{ Auth::user()->name }}!</button>
       <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-chevron-down"></i>
         <span class="sr-only">Toggle Dropdown</span>
@@ -35,8 +39,16 @@
         <a class="dropdown-item" href="{{ route('posts.index') }}">المقالات</a>
         <a class="dropdown-item" href="{{ route('posts.create') }}">إنشاء مقال جديد</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">تسجيل الخروج</a>
+        <a href="{{ route('logout') }}" class="dropdown-item"
+           onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+            تسجيل الخروج
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+              style="display: none;">
+            {{ csrf_field() }}
+        </form>
       </div>
+      @endif
     </ul>
   </div>
 </nav>
