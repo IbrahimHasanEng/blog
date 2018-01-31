@@ -30,7 +30,7 @@
           <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">تسجيل الدخول</a></li>
           <li class="nav-item"><a href="{{ route('register') }}" class="nav-link">إنشاء حساب جديد</a></li>
       @else
-      <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="عرض الملف الشخصي" dir="rtl">أهلاً {{ Auth::user()->name }}!</button>
+      <button type="button" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="عرض الملف الشخصي" dir="rtl">أهلاً {{ substr((Auth::user()->name), 0, strpos(Auth::user()->name, ' ')) }}!</button>
       <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-chevron-down"></i>
         <span class="sr-only">Toggle Dropdown</span>

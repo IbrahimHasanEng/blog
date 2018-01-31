@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', "- إنشاء كلمة مرور جديدة")
+
 @section('content')
 <div class="container">
     <div class="row justify-content-md-center mt-5">
