@@ -39,7 +39,7 @@
     @foreach($posts as $post)
 
       <div class="post mb-5">
-        <h3>{{ $post->title }}</h3>
+        <h3>{{ $post->title }} <small class="text-secondary">{{ Date::parse(strtotime($post->created_at))->ago() }}</small></h3>
         <div class="my-3">{!! mb_substr(strip_tags($post->body), 0, 300) !!}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</div>
         {!! Html::linkRoute('blog.single', 'تابع القراءة', array($post->id), array('class' => 'btn btn-primary btn-sm')) !!}
         <hr>

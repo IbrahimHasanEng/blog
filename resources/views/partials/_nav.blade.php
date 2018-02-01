@@ -36,8 +36,9 @@
         <span class="sr-only">Toggle Dropdown</span>
       </button>
       <div class="dropdown-menu text-right bg-dark">
+          <a class="dropdown-item" href="{{ route('posts.create') }}">إنشاء مقال جديد</a>
         <a class="dropdown-item" href="{{ route('posts.index') }}">المقالات</a>
-        <a class="dropdown-item" href="{{ route('posts.create') }}">إنشاء مقال جديد</a>
+        <a class="dropdown-item" href="{{ route('categories.index') }}">الفئات</a>
         <div class="dropdown-divider"></div>
         <a href="{{ route('logout') }}" class="dropdown-item"
            onclick="event.preventDefault();document.getElementById('logout-form').submit();">

@@ -1,6 +1,6 @@
 <?php
 function ArabicDate() {
-    $months = array("Jan" => "يناير", "Feb" => "فبراير", "Mar" => "مارس", "Apr" => "أبريل", "May" => "مايو", "Jun" => "يونيو", "Jul" => "يوليو", "Aug" => "أغسطس", "Sep" => "سبتمبر", "Oct" => "أكتوبر", "Nov" => "نوفمبر", "Dec" => "ديسمبر");
+    $months = array("Jan" => "كانون الثاني", "Feb" => "شباط", "Mar" => "آذار", "Apr" => "نيسان", "May" => "أيار", "Jun" => "حزيران", "Jul" => "تموز", "Aug" => "آب", "Sep" => "أيلول", "Oct" => "تشرين الأول", "Nov" => "تشرين الثاني", "Dec" => "كانون الأول");
     $your_date = date('y-m-d'); // The Current Date
     $en_month = date("M", strtotime($your_date));
     foreach ($months as $en => $ar) {
