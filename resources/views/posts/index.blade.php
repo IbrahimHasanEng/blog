@@ -16,6 +16,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">عنوان المقال</th>
+            <th scope="col">الفئة</th>
             <th scope="col">تاريخ الإنشاء</th>
             <th scope="col">الأدوات</th>
           </tr>
@@ -25,6 +26,7 @@
           <tr>
             <th scope="row">{{ $post->id }}</th>
             <td>{{ $post->title }}</td>
+            <td>{{ $post->category->name }}</td>
             <td>{{ Date::parse(strtotime($post->created_at))->format('j F، Y') }}</td>
             <td>
               <a href="{{ route('posts.show', $post->id) }}" class="btn btn-link btn-sm">عرض</a>

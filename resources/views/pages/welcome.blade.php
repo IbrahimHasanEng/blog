@@ -39,7 +39,8 @@
     @foreach($posts as $post)
 
       <div class="post mb-5">
-        <h3>{{ $post->title }} <small class="text-secondary">{{ Date::parse(strtotime($post->created_at))->ago() }}</small></h3>
+        <h3><span class="badge badge-dark align-top"><small>{{ $post->category->name }}</small></span> {{ $post->title }}</h3>
+        <h4><small class="text-secondary">{{ Date::parse(strtotime($post->created_at))->ago() }}</small></h4>
         <div class="my-3">{!! mb_substr(strip_tags($post->body), 0, 300) !!}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</div>
         {!! Html::linkRoute('blog.single', 'تابع القراءة', array($post->id), array('class' => 'btn btn-primary btn-sm')) !!}
         <hr>

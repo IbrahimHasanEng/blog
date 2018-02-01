@@ -13,7 +13,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">اسم الفئة</th>
-            {{--  <th scope="col">عدد المقالات</th>  --}}
+            <th scope="col">عدد المقالات</th>
             <th scope="col">تاريخ الإنشاء</th>
           </tr>
         </thead>
@@ -22,6 +22,15 @@
           <tr>
             <th scope="row">{{ $category->id }}</th>
             <td>{{ $category->name }}</td>
+            <td>
+                <?php $count = 0 ?>
+                @foreach($posts as $post)
+                  @if($post->category_id == $category->id)
+                    <?php $count += 1 ?>
+                  @endif
+                @endforeach
+                {{ $count }}
+            </td>
             <td>{{ Date::parse(strtotime($category->created_at))->format('j F، Y') }}</td>
           </tr>
         @endforeach

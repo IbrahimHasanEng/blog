@@ -16,12 +16,17 @@
   {{ Form::text('title', null, array('class' => 'form-control', 'placeholder' => 'اكتب عنوان المقال هنا', 'required' => '', 'minlength' => '5', 'maxlength' => '255')) }}
 </div>
 <div class="form-group">
-  {{ Form::label('slug', 'العنوان الذي سيظهر في الرابط') }}
-  {{ Form::text('slug', null, array('class' => 'form-control', 'required' => '', 'minlength' => '5', 'maxlength' => '255')) }}
+  {{ Form::label('category_id', 'فئة المقال') }}
+  <select class="custom-select" name="category_id">
+      <option selected>اختر الفئة المناسبة للمقال</option>
+      @foreach($categories as $category)
+      <option value="{{ $category->id }}">{{ $category->name }}</option>
+      @endforeach
+  </select>
 </div>
 <div class="form-group">
   {{ Form::label('body', 'محتوى المقال:') }}
-  {{ Form::textarea('body', null, array('id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'اكتب المقال هنا', 'required' => '', 'minlength' => '150')) }}
+  {{ Form::textarea('body', null, array('id' => 'create_post', 'class' => 'form-control', 'placeholder' => 'اكتب المقال هنا', 'required' => '', 'minlength' => '150')) }}
 </div>
   {{ Form::submit('انشر المقال', array('class' => 'btn btn-primary btn-block')) }}
 
@@ -34,8 +39,8 @@
   {!! Html::script('js/parsley-lang/ar.js') !!}
   {!! Html::script('vendor/ckeditor/ckeditor.js') !!}
   <script>
-      CKEDITOR.replace('article-ckeditor', {
-          language: 'ar'
+      CKEDITOR.replace('create_post', {
+        language: 'ar'
       });
   </script>
 @endsection

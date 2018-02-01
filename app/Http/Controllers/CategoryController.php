@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
+use App\Post;
 use Session;
 
 class CategoryController extends Controller
@@ -22,8 +23,9 @@ class CategoryController extends Controller
     {
         //
         $categories = Category::all();
+        $posts = Post::all();
 
-        return view('categories.index')->withCategories($categories);
+        return view('categories.index')->withCategories($categories)->withPosts($posts);
     }
 
     /**
