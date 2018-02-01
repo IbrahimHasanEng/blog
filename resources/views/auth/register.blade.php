@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-header">إنشاء حساب جديد</div>
                 <div class="card-body">
-                    <form role="form" method="POST" action="{{ url('/register') }}">
+                    <form role="form" method="POST" action="{{ url('/register') }}" novalidate>
                         {!! csrf_field() !!}
 
                         <div class="form-group row">

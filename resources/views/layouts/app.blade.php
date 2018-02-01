@@ -24,7 +24,7 @@ Date::setLocale('ar');
     @yield('carousel')
 
     <div class="container mt-4">
-      @include('partials._messages')
+      {{--  @include('partials._messages')  --}}
       @yield('content')
 
     </div><!-- End of Container -->

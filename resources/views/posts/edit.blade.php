@@ -2,10 +2,6 @@
 
 @section('title', '- عرض المقال')
 
-@section('styles')
-  {!! Html::style('css/parsley.css') !!}
-@endsection
-
 @section('content')
 <div class="container">
   <div class="row">
@@ -14,6 +10,11 @@
       <div class="form-group">
         {{ Form::label('title', 'عنوان المقال:') }}
         {{ Form::text('title', null, array('class' => 'form-control form-control-lg')) }}
+        @if ($errors->has('title'))
+            <div class="text-danger">
+                <strong>{{ $errors->first('title') }}</strong>
+            </div>
+        @endif
       </div>
       <div class="form-group">
           {{ Form::label('category_id', 'فئة المقال') }}
@@ -23,10 +24,20 @@
               <option value="{{ $category->id }}">{{ $category->name }}</option>
               @endforeach
           </select>
+          @if ($errors->has('category_id'))
+              <div class="text-danger">
+                  <strong>{{ $errors->first('category_id') }}</strong>
+              </div>
+          @endif
       </div>
       <div class="form-group">
         {{ Form::label('body', 'محتوى المقال:') }}
         {{ Form::textarea('body', null, array('id' => 'edit_post', 'class' => 'form-control')) }}
+        @if ($errors->has('body'))
+            <div class="text-danger">
+                <strong>{{ $errors->first('body') }}</strong>
+            </div>
+        @endif
       </div>
     </div>
     <div class="col-4">
@@ -64,8 +75,6 @@
 @endsection
 
 @section('scripts')
-  {!! Html::script('js/parsley.min.js') !!}
-  {!! Html::script('js/parsley-lang/ar.js') !!}
   {!! Html::script('vendor/ckeditor/ckeditor.js') !!}
   <script>
       CKEDITOR.replace('edit_post', {

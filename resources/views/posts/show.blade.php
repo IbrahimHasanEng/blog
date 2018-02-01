@@ -2,10 +2,6 @@
 
 @section('title', '- عرض المقال')
 
-@section('styles')
-  {!! Html::style('css/parsley.css') !!}
-@endsection
-
 @section('content')
   <div class="row">
     <div class="col-8">
@@ -53,9 +49,4 @@
     </div>
   </div>
 
-@endsection
-
-@section('scripts')
-  {!! Html::script('js/parsley.min.js') !!}
-  {!! Html::script('js/parsley-lang/ar.js') !!}
 @endsection

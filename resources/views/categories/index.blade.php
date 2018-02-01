@@ -48,6 +48,11 @@
                         <div class="form-group">
                         {{ Form::label('name', 'اسم الفئة') }}
                         {{ Form::text('name', null, ['class' => 'form-control']) }}
+                        @if ($errors->has('name'))
+                            <div class="text-danger">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </div>
+                        @endif
                         </div>
                         {{ Form::submit('إنشاء الفئة الجديدة', array('class' => 'btn btn-success btn-block')) }}
                         {!! Form::close() !!}
