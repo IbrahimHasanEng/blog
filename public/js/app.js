@@ -11368,8 +11368,15 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 
   $(".dropdown-toggle").click(function () {
-    $(".dropdown-menu").slideToggle(600);
+    $(".dropdown-menu").slideToggle();
   });
+
+  $(document).click(function (e) {
+    if ($(e.target).closest('.dropdown-menu').length === 0) {
+      $(".dropdown-menu").slideUp();
+    }
+  });
+
   $(".navbar-toggler").click(function () {
     $(".navbar-collapse").slideToggle(600);
   });
