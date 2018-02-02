@@ -77,6 +77,7 @@
                             </div>
                         </div>
                     </form>
+                    ليس لديك حساب؟ <a href="{{ route('register') }}">إنشاء حساب جديد</a>
                 </div>
             </div>
         </div>

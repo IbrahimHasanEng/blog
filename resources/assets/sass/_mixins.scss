@@ -1,0 +1,71 @@
+// Mixins
+@mixin transition(
+$property: all,
+$duration: 0.35s) {
+
+  -webkit-transition: $property $duration;
+  -moz-transition: $property $duration;
+  -o-transition: $property $duration;
+  transition: $property $duration;
+}
+
+@mixin transform3d(
+$x: 0,
+$y: 0,
+$z: 0) {
+
+  -webkit-transform: translate3d($x, $y, $z);
+  -moz-transform: translate3d($x, $y, $z);
+  -o-transform: translate3d($x, $y, $z);
+  transform: translate3d($x, $y, $z);
+}
+
+@mixin background-image(
+$url: url(../img/header.jpg),
+$size: cover,
+$repeat: no-repeat,
+$position: right center,
+$color: $blackTran-2,
+$blendMode: color ) {
+
+  background-image: $url;
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+  background-color: $color;
+  background-blend-mode: $blendMode;
+}
+
+@mixin animate(
+$duration: 1.5s,
+$delay: 0s,
+$iteration: infinite) {
+
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -o-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  -o-animation-delay: $delay;
+  animation-delay: $delay;
+  -webkit-animation-iteration-count: $iteration;
+  -moz-animation-iteration-count: $iteration;
+  -o-animation-iteration-count: $iteration;
+  animation-iteration-count: $iteration;
+}
+
+@mixin hr(
+$width: 50%,
+$borderWidth: 3px,
+$borderColor: $primary,
+$opacity: 1) {
+
+  width: $width;
+  border-width: $borderWidth;
+  border-color: $borderColor;
+  opacity: $opacity;
+}

@@ -1,0 +1,136 @@
+.top-nav {
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .03);
+    height: 2.25rem;
+
+    .date,
+    .time {
+        color: #000;
+        font-size: 14px;
+    }
+
+    .social-top {
+        text-align: center;
+        height: 36px;
+
+        a {
+            height: 100%;
+            width: 100%;
+            padding: 0.4rem 0.3125rem 0 0.3125rem;
+            @include transition(all, 0.2s);
+        }
+
+        .facebook {
+            color: #4c66a4;
+
+            &:hover {
+                color: #fff;
+                background: #4c66a4;
+            }
+        }
+
+        .twitter {
+            color: #5dd7fc;
+
+            &:hover {
+                color: #fff;
+                background: #5dd7fc;
+            }
+        }
+
+        .google {
+            color: #d95232;
+
+            &:hover {
+                color: #fff;
+                background: #d95232;
+            }
+        }
+
+        .linkedin {
+            color: #0274b3;
+
+            &:hover {
+                color: #fff;
+                background: #0274b3;
+            }
+        }
+        
+    }
+}
+
+.navbar {
+    font-size: 17px;
+    font-weight: 600;
+    border: 1px solid #eee;
+    border-left: 0;
+    background: #fff;
+    box-shadow: 0 3px 2px 0 rgba(0, 0, 0, .03);
+    min-height: 3.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+    .navbar-collapse {
+        height: 100%;
+
+        .navbar-nav {
+            padding: 0;
+            height: 100%;
+
+            .dropdown-toggle::after {
+                display: none;
+            }
+    
+            .nav-link {
+                text-align: center;
+
+                .fa-chevron-down {
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+
+    .dropdown-menu {
+        border-radius: 0;
+        font-size: inherit;
+
+        .dropdown-item {
+            font-weight: 500;
+            color: $custom-dropdown-link-color;
+
+            &:hover, 
+            &:focus {
+                color: $custom-dropdown-link-hover-color;
+                background-color: $custom-dropdown-link-hover-bg;
+            }
+        }
+    }
+
+    .dropdown-menu-right {
+        left: auto;
+    }
+
+    .dropdown-menu-left {
+        left: 0;
+    }
+}
+
+@media all and (min-width: 768px) {
+    .navbar {
+        padding: 0 2rem;
+        position: sticky;
+
+        .nav-link {
+            margin: 0 0.1rem;
+            padding: 0.8rem 0.8rem;
+            border-bottom: 0.1rem solid transparent;
+            @include transition(all, 0.3s);
+
+            &:hover {
+                border-bottom: 0.1rem solid $navbar-light-hover-color;
+            }
+        }
+    }
+}

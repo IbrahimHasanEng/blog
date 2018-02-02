@@ -1,4 +1,3 @@
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 <script>

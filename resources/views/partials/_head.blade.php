@@ -10,5 +10,6 @@
 
 <link rel='stylesheet' href='http://fonts.googleapis.com/earlyaccess/droidarabickufi.css'>
 <link rel='stylesheet' href='http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 <title>نور @yield('title')</title>

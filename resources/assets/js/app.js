@@ -23,4 +23,11 @@ const app = new Vue({
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
+
+  $(".dropdown-toggle").click(function(){
+    $(".dropdown-menu").slideToggle(600);
+  });
+  $(".navbar-toggler").click(function(){
+    $(".navbar-collapse").slideToggle(600);
+  });
 });

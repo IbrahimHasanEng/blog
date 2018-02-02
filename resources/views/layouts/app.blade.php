@@ -21,9 +21,9 @@ Date::setLocale('ar');
 
     @include('partials._nav')
 
-    @yield('carousel')
+    {{--  @yield('carousel')  --}}
 
-    <div class="container mt-4">
+    <div class="container pt-5">
       {{--  @include('partials._messages')  --}}
       @yield('content')
 
