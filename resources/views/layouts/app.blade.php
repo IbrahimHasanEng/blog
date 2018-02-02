@@ -3,6 +3,7 @@
 use Jenssegers\Date\Date;
 
 Date::setLocale('ar');
+date_default_timezone_set('Europe/Istanbul');
 
 ?>
 

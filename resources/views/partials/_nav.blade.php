@@ -1,9 +1,9 @@
 <div class="top-nav d-none d-md-block">
   <div class="container d-flex align-items-center h-100">
-    <div class="date w-25 text-right"><i class="fa fa-calendar"></i> {{ Date::now()->format('l، j F Y') }}</div>
+    <div class="date w-25 text-right"><i class="fa fa-calendar fa-fw"></i> {{ Date::now()->format('l، j F Y') }}</div>
     <div class="social-top h-100 mx-auto d-flex justify-content-between align-items-center">
       <a class="linkedin" href="#" target="_blank"><span class="align-middle"><i class="fa fa-linkedin fa-fw"></i></span></a>
-      <a class="twitter" href="#" target="_blank"><span class="align-middle"><i class="fa fa-twitter"></i></span></a>
+      <a class="twitter" href="#" target="_blank"><span class="align-middle"><i class="fa fa-twitter fa-fw"></i></span></a>
       <a class="facebook" href="#" target="_blank"><span class="align-middle"><i class="fa fa-facebook-f fa-fw"></i></span></a>
       <a class="instagram" href="#" target="_blank"><span class="align-middle"><i class="fa fa-instagram fa-fw"></i></span></a>
       <a class="google-plus" href="#" target="_blank"><span class="align-middle"><i class="fa fa-google-plus fa-fw"></i></span></a>
@@ -13,7 +13,7 @@
       <a class="tumblr" href="#" target="_blank"><span class="align-middle"><i class="fa fa-tumblr fa-fw"></i></span></a>
       <a class="rss" href="#" target="_blank"><span class="align-middle"><i class="fa fa-rss fa-fw"></i></span></a>
     </div>
-    <div class="time w-25 text-left"><i class="fa fa-clock-o"></i> {{ Date::now()->format('الساعة H:i') }}</div>
+    <div class="time w-25 text-left"><i class="fa fa-clock-o fa-fw fa-lg"></i> {{ Date::parse('now', date_default_timezone_get())->format('الساعة H:i بتوقيت إسطنبول') }}</div>
   </div>
 </div><!-- Here Header Ends -->
 
