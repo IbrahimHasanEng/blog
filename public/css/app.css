@@ -13120,13 +13120,13 @@ h6 {
   transition: all 0.2s;
 }
 
-.top-nav .social-top .facebook {
-  color: #4c66a4;
+.top-nav .social-top .linkedin {
+  color: #0274b3;
 }
 
-.top-nav .social-top .facebook:hover {
+.top-nav .social-top .linkedin:hover {
   color: #fff;
-  background: #4c66a4;
+  background: #0274b3;
 }
 
 .top-nav .social-top .twitter {
@@ -13138,22 +13138,76 @@ h6 {
   background: #5dd7fc;
 }
 
-.top-nav .social-top .google {
+.top-nav .social-top .facebook {
+  color: #4c66a4;
+}
+
+.top-nav .social-top .facebook:hover {
+  color: #fff;
+  background: #4c66a4;
+}
+
+.top-nav .social-top .instagram {
+  color: #e4405f;
+}
+
+.top-nav .social-top .instagram:hover {
+  color: #fff;
+  background: #e4405f;
+}
+
+.top-nav .social-top .google-plus {
   color: #d95232;
 }
 
-.top-nav .social-top .google:hover {
+.top-nav .social-top .google-plus:hover {
   color: #fff;
   background: #d95232;
 }
 
-.top-nav .social-top .linkedin {
-  color: #0274b3;
+.top-nav .social-top .bloglovin {
+  color: #000;
 }
 
-.top-nav .social-top .linkedin:hover {
+.top-nav .social-top .bloglovin:hover {
   color: #fff;
-  background: #0274b3;
+  background: #000;
+}
+
+.top-nav .social-top .pinterest {
+  color: #bd081c;
+}
+
+.top-nav .social-top .pinterest:hover {
+  color: #fff;
+  background: #bd081c;
+}
+
+.top-nav .social-top .youtube {
+  color: #cd201f;
+}
+
+.top-nav .social-top .youtube:hover {
+  color: #fff;
+  background: #cd201f;
+}
+
+.top-nav .social-top .tumblr {
+  color: #34465d;
+}
+
+.top-nav .social-top .tumblr:hover {
+  color: #fff;
+  background: #34465d;
+}
+
+.top-nav .social-top .rss {
+  color: #f76300;
+}
+
+.top-nav .social-top .rss:hover {
+  color: #fff;
+  background: #f76300;
 }
 
 .navbar {

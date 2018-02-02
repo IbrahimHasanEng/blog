@@ -1,13 +1,19 @@
 <div class="top-nav d-none d-md-block">
   <div class="container d-flex align-items-center h-100">
-    <div class="date w-25 text-right"><i class="fa fa-calendar"></i> الأربعاء 31 كانون الثاني 2018</div>
+    <div class="date w-25 text-right"><i class="fa fa-calendar"></i> {{ Date::now()->format('l، j F Y') }}</div>
     <div class="social-top h-100 mx-auto d-flex justify-content-between align-items-center">
-      <a href="#" target="_blank" class="facebook"><span class="align-middle"><i class="fa fa-facebook-f fa-fw"></i></span></a>
-      <a href="#" target="_blank" class="twitter"><span class="align-middle"><i class="fa fa-twitter fa-fw"></i></span></a>
-      <a href="#" target="_blank" class="google"><span class="align-middle"><i class="fa fa-google-plus fa-fw"></i></span></a>
-      <a href="#" target="_blank" class="linkedin"><span class="align-middle"><i class="fa fa-linkedin fa-fw"></i></span></a>
+      <a class="linkedin" href="#" target="_blank"><span class="align-middle"><i class="fa fa-linkedin fa-fw"></i></span></a>
+      <a class="twitter" href="#" target="_blank"><span class="align-middle"><i class="fa fa-twitter"></i></span></a>
+      <a class="facebook" href="#" target="_blank"><span class="align-middle"><i class="fa fa-facebook-f fa-fw"></i></span></a>
+      <a class="instagram" href="#" target="_blank"><span class="align-middle"><i class="fa fa-instagram fa-fw"></i></span></a>
+      <a class="google-plus" href="#" target="_blank"><span class="align-middle"><i class="fa fa-google-plus fa-fw"></i></span></a>
+      <a class="bloglovin" href="#" target="_blank"><span class="align-middle"><i class="fa fa-heart fa-fw"></i></span></a>
+      <a class="pinterest" href="#" target="_blank"><span class="align-middle"><i class="fa fa-pinterest fa-fw"></i></span></a>
+      <a class="youtube" href="#" target="_blank"><span class="align-middle"><i class="fa fa-youtube-play fa-fw"></i></span></a>
+      <a class="tumblr" href="#" target="_blank"><span class="align-middle"><i class="fa fa-tumblr fa-fw"></i></span></a>
+      <a class="rss" href="#" target="_blank"><span class="align-middle"><i class="fa fa-rss fa-fw"></i></span></a>
     </div>
-    <div class="time w-25 text-left"><i class="fa fa-clock-o"></i> 5:30 صباحاً </div>
+    <div class="time w-25 text-left"><i class="fa fa-clock-o"></i> {{ Date::now()->format('الساعة H:i') }}</div>
   </div>
 </div><!-- Here Header Ends -->
 

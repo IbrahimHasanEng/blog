@@ -20,12 +20,12 @@
             @include transition(all, 0.2s);
         }
 
-        .facebook {
-            color: #4c66a4;
+        .linkedin {
+            color: #0274b3;
 
             &:hover {
                 color: #fff;
-                background: #4c66a4;
+                background: #0274b3;
             }
         }
 
@@ -38,7 +38,25 @@
             }
         }
 
-        .google {
+        .facebook {
+            color: #4c66a4;
+
+            &:hover {
+                color: #fff;
+                background: #4c66a4;
+            }
+        }
+
+        .instagram {
+            color: #e4405f;
+
+            &:hover {
+                color: #fff;
+                background: #e4405f;
+            }
+        }
+
+        .google-plus {
             color: #d95232;
 
             &:hover {
@@ -47,14 +65,51 @@
             }
         }
 
-        .linkedin {
-            color: #0274b3;
+        .bloglovin {
+            color: #000;
 
             &:hover {
                 color: #fff;
-                background: #0274b3;
+                background: #000;
             }
         }
+
+        .pinterest {
+            color: #bd081c;
+
+            &:hover {
+                color: #fff;
+                background: #bd081c;
+            }
+        }
+
+        .youtube {
+            color: #cd201f;
+
+            &:hover {
+                color: #fff;
+                background: #cd201f;
+            }
+        }
+
+        .tumblr {
+            color: #34465d;
+
+            &:hover {
+                color: #fff;
+                background: #34465d;
+            }
+        }
+
+        .rss {
+            color: #f76300;
+
+            &:hover {
+                color: #fff;
+                background: #f76300;
+            }
+        }
+
         
     }
 }
