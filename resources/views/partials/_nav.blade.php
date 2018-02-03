@@ -51,7 +51,8 @@
         <div class="dropdown-menu dropdown-menu-left text-center animated" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{ route('posts.create') }}">إنشاء مقال جديد</a>
           <a class="dropdown-item" href="{{ route('posts.index') }}">المقالات</a>
-          <a class="dropdown-item" href="{{ route('categories.index') }}">الفئات</a>
+          <a class="dropdown-item" href="{{ route('categories.index') }}">التصنيفات</a>
+          <a class="dropdown-item" href="{{ route('tags.index') }}">الوسوم</a>
           <div class="dropdown-divider"></div>
           <a href="{{ route('logout') }}" class="dropdown-item"
               onclick="event.preventDefault();document.getElementById('logout-form').submit();">

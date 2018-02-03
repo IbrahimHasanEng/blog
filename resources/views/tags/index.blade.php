@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', '- التصنيفات')
+@section('title', '- الوسوم')
 
 @section('content')
 
-  <h1>التصنيفات</h1>
+  <h1>الوسوم</h1>
   <hr>
   <div class="row">
     <div class="col-8">
@@ -12,26 +12,16 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">التصنيف</th>
-            <th scope="col">عدد المقالات</th>
+            <th scope="col">الوسم</th>
             <th scope="col">تاريخ الإنشاء</th>
           </tr>
         </thead>
         <tbody>
-        @foreach($categories as $category)
+        @foreach($tags as $tag)
           <tr>
-            <th scope="row">{{ $category->id }}</th>
-            <td>{{ $category->name }}</td>
-            <td>
-                <?php $count = 0 ?>
-                @foreach($posts as $post)
-                  @if($post->category_id == $category->id)
-                    <?php $count += 1 ?>
-                  @endif
-                @endforeach
-                {{ $count }}
-            </td>
-            <td>{{ Date::parse(strtotime($category->created_at))->format('j F، Y') }}</td>
+            <th scope="row">{{ $tag->id }}</th>
+            <td>{{ $tag->name }}</td>
+            <td>{{ Date::parse(strtotime($tag->created_at))->format('j F، Y') }}</td>
           </tr>
         @endforeach
         </tbody>
@@ -40,13 +30,13 @@
     <div class="col-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">إنشاء تصنيف جديد</h5>    
+                <h5 class="card-title">إنشاء وسم جديد</h5>    
                 <hr>
                 <div class="row">
                     <div class="col-12">
-                        {!! Form::open(['route' => 'categories.store', 'method' => 'POST']) !!}
+                        {!! Form::open(['route' => 'tags.store', 'method' => 'POST']) !!}
                         <div class="form-group">
-                        {{ Form::label('name', 'التصنيفات') }}
+                        {{ Form::label('name', 'الوسمات') }}
                         {{ Form::text('name', null, ['class' => 'form-control']) }}
                         @if ($errors->has('name'))
                             <div class="text-danger">
@@ -54,7 +44,7 @@
                             </div>
                         @endif
                         </div>
-                        {{ Form::submit('إنشاء التصنيف الجديد', array('class' => 'btn btn-success btn-block')) }}
+                        {{ Form::submit('إنشاء الوسم الجديد', array('class' => 'btn btn-success btn-block')) }}
                         {!! Form::close() !!}
                     </div>
                 </div>

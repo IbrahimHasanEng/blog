@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tag;
+use App\Post;
 use Session;
 
 class TagController extends Controller
@@ -21,7 +22,8 @@ class TagController extends Controller
     {
         //
         $tags = Tag::all();
-        return view('tags.index')->withTags($tags);
+        $posts = Post::all();
+        return view('tags.index')->withTags($tags)->withPosts($posts);
     }
 
     /**

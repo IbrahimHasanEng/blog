@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
+use App\Tag;
 use Session;
 
 class PostController extends Controller
@@ -33,7 +34,8 @@ class PostController extends Controller
     {
         //
         $categories = Category::all();
-        return view('posts.create')->withCategories($categories);
+        $tags = Tag::all();
+        return view('posts.create')->withCategories($categories)->withTags($tags);
     }
 
     /**
@@ -58,6 +60,8 @@ class PostController extends Controller
         $post->body = $request->body;
 
         $post->save();
+        
+        $post->tags()->sync($request->tags, false);
 
         Session::flash('success', 'تم نشر المقال بنجاح');
 

@@ -35,16 +35,16 @@
 </div>
 <div class="form-group">
     {{ Form::label('tags', 'الوسوم:') }}
-    <select class="custom-select tags" name="tags" multiple="multiple">
-        <option value="AL">الحب</option>
-          ...
-        <option value="WY">الحياة</option>
+    <select class="custom-select tags" name="tags[]" multiple="multiple">
+        @foreach($tags as $tag)
+        <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+        @endforeach
     </select>
-    {{--  @if ($errors->has('tags'))
+    @if ($errors->has('tags'))
         <div class="text-danger">
-            <strong>{{ $errors->first('title') }}</strong>
+            <strong>{{ $errors->first('tags') }}</strong>
         </div>
-    @endif  --}}
+    @endif
   </div>
 <div class="form-group">
   {{ Form::label('body', 'محتوى المقال:') }}
