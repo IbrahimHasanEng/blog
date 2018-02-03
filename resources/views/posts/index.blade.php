@@ -16,7 +16,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">عنوان المقال</th>
-            <th scope="col">الفئة</th>
+            <th scope="col">التصنيف</th>
             <th scope="col">تاريخ الإنشاء</th>
             <th scope="col">الأدوات</th>
           </tr>

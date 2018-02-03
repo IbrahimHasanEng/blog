@@ -13076,10 +13076,6 @@ a.text-dark:focus {
   margin-bottom: 0;
 }
 
-.navbar-toggler {
-  color: #29357f !important;
-}
-
 body {
   font-family: Palatino;
   font-size: 0.9rem;
@@ -13280,12 +13276,19 @@ h6 {
     margin: 0 0.1rem;
     padding: 0.8rem 0.8rem;
     border-bottom: 0.1rem solid transparent;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
   }
 
   .navbar .nav-link:hover {
     border-bottom: 0.1rem solid #29357f;
   }
+}
+
+#showDetails {
+  right: 100%;
+  z-index: 0;
+  border-radius: 0;
+  display: none;
 }
 

@@ -2,6 +2,10 @@
 
 @section('title', '- مقال جديد')
 
+@section('styles')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+@endsection
+
 @section('content')
 
 <h1>مقال جديد</h1>
@@ -17,7 +21,7 @@
   @endif
 </div>
 <div class="form-group">
-  {{ Form::label('category_id', ':فئة المقال') }}
+  {{ Form::label('category_id', 'التصنيف:') }}
   <select class="custom-select" name="category_id">
       @foreach($categories as $category)
       <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -29,6 +33,19 @@
       </div>
   @endif
 </div>
+<div class="form-group">
+    {{ Form::label('tags', 'الوسوم:') }}
+    <select class="custom-select tags" name="tags" multiple="multiple">
+        <option value="AL">الحب</option>
+          ...
+        <option value="WY">الحياة</option>
+    </select>
+    {{--  @if ($errors->has('tags'))
+        <div class="text-danger">
+            <strong>{{ $errors->first('title') }}</strong>
+        </div>
+    @endif  --}}
+  </div>
 <div class="form-group">
   {{ Form::label('body', 'محتوى المقال:') }}
   {{ Form::textarea('body', null, array('id' => 'create_post', 'class' => 'form-control', 'placeholder' => 'اكتب المقال هنا')) }}
@@ -45,9 +62,16 @@
 
 @section('scripts')
   {!! Html::script('vendor/ckeditor/ckeditor.js') !!}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.min.js"></script>
   <script>
-      CKEDITOR.replace('create_post', {
+    CKEDITOR.replace('create_post', {
         language: 'ar'
-      });
+    });
+
+    $('.tags').select2();
+
+    $(window).resize(function() {
+        $('.tags').select2();
+    });
   </script>
 @endsection

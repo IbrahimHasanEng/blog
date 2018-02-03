@@ -2,23 +2,26 @@
 
 @section('title', "- $post->title")
 
-@section('content')
+@section('fixed')
+<a href="#" id="showDetails" class="btn btn-success" style="top: 305px; position: sticky;"><i class="fa fa-angle-double-right fa-lg"></i></a>
+@endsection
 
+@section('content')
   <div class="row">
-    <div class="col-8">
+    <div id="post" class="col-8">
       <h1 class="mt-4">{{ $post->title }}</h1>
       <hr>
       <div class="lead">{!! $post->body !!}</div>
     </div>
-    <div class="col-4">
-      <div class="card">
+    <div id="postDetails" class="col-4">
+      <div class="card" style="top: 100px; position: sticky;">
         <div class="card-body">
             <h5 class="card-title">تفاصيل المقال</h5>
             <hr>
             <h6>الكاتب:</h6>
             <p>ابراهيم حسن</p>
 
-            <h6>الفئة:</h6>
+            <h6>التصنيف:</h6>
             <p>{{ $post->category->name }}</p>
             <h6>تاريخ الإنشاء:</h6>
             <p>{{ Date::parse(strtotime($post->created_at))->format('الساعة H:i من j F، Y') }}</p>
@@ -26,8 +29,11 @@
             <p>{{ Date::parse(strtotime($post->updated_at))->format('الساعة H:i من j F، Y') }}</p>
           <br>
           <div class="row">
-            <div class="col-12">
-              {!! Html::linkRoute('blog.index', 'جميع المقالات <<', array(), array('class' => 'btn btn-secondary btn-block')) !!}
+            <div class="col-6">
+              {!! Html::linkRoute('blog.index', 'جميع المقالات', array(), array('class' => 'btn btn-secondary btn-block')) !!}
+            </div>
+            <div class="col-6">
+              <a href="#" id="hideDetails" class="btn btn-danger btn-block">إخفاء التفاصيل <i class="fa fa-angle-double-left fa-lg"></i></a>
             </div>
           </div>
         </div>
@@ -38,6 +44,5 @@
 @endsection
 
 @section('scripts')
-  {!! Html::script('js/parsley.min.js') !!}
-  {!! Html::script('js/parsley-lang/ar.js') !!}
+
 @endsection

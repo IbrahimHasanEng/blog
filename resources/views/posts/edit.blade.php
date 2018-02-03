@@ -17,7 +17,7 @@
         @endif
       </div>
       <div class="form-group">
-          {{ Form::label('category_id', 'فئة المقال') }}
+          {{ Form::label('category_id', 'التصنيف') }}
           <select class="custom-select" name="category_id">
               <option style="font-style: italic; background: #ddd;" value="{{ $post->category->id }}" selected>محددة: {{ $post->category->name }}</option>
               @foreach($categories as $category)
@@ -48,7 +48,7 @@
             <h6>الكاتب:</h6>
             <p>ابراهيم حسن</p>
 
-            <h6>الفئة:</h6>
+            <h6>التصنيف:</h6>
             <p>{{ $post->category->name }}</p>
 
             <h6>تاريخ الإنشاء:</h6>

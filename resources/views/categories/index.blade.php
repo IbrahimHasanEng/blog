@@ -12,7 +12,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">اسم الفئة</th>
+            <th scope="col">التصنيف</th>
             <th scope="col">عدد المقالات</th>
             <th scope="col">تاريخ الإنشاء</th>
           </tr>
@@ -40,13 +40,13 @@
     <div class="col-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">إنشاء فئة جديدة</h5>    
+                <h5 class="card-title">إنشاء تصنيف جديد</h5>    
                 <hr>
                 <div class="row">
                     <div class="col-12">
                         {!! Form::open(['route' => 'categories.store', 'method' => 'POST']) !!}
                         <div class="form-group">
-                        {{ Form::label('name', 'اسم الفئة') }}
+                        {{ Form::label('name', 'التصنيفات') }}
                         {{ Form::text('name', null, ['class' => 'form-control']) }}
                         @if ($errors->has('name'))
                             <div class="text-danger">
@@ -54,7 +54,7 @@
                             </div>
                         @endif
                         </div>
-                        {{ Form::submit('إنشاء الفئة الجديدة', array('class' => 'btn btn-success btn-block')) }}
+                        {{ Form::submit('إنشاء التصنيف الجديد', array('class' => 'btn btn-success btn-block')) }}
                         {!! Form::close() !!}
                     </div>
                 </div>

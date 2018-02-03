@@ -181,7 +181,7 @@
             margin: 0 0.1rem;
             padding: 0.8rem 0.8rem;
             border-bottom: 0.1rem solid transparent;
-            @include transition(all, 0.3s);
+            @include transition(all, 0.2s);
 
             &:hover {
                 border-bottom: 0.1rem solid $navbar-light-hover-color;

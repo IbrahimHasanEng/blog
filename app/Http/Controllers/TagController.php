@@ -3,17 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Category;
-use App\Post;
+use App\Tag;
 use Session;
 
-class CategoryController extends Controller
+class TagController extends Controller
 {
-    public function __construct() 
+    public function __construct()
     {
         $this->middleware('auth');
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,10 +20,8 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $categories = Category::all();
-        $posts = Post::all();
-
-        return view('categories.index')->withCategories($categories)->withPosts($posts);
+        $tags = Tag::all();
+        return view('tags.index')->withTags($tags);
     }
 
     /**
@@ -41,15 +37,14 @@ class CategoryController extends Controller
             'name' => 'required|max:255'
         ]);
 
-        $category = new Category;
+        $tag = new Tag;
 
-        $category->name = $request->name;
+        $tag->name = $request->name;
+        $tag->save();
 
-        $category->save();
+        Session::flash('success', 'تم إضافة الوسم بنجاح!');
 
-        Session::flash('success', 'تم إضافة تصنيف جديد بنجاح!');
-
-        return redirect()->route('categories.index');
+        return redirect()->route('tags.index');
     }
 
     /**

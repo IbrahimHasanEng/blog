@@ -37,4 +37,21 @@ $(function () {
   $(".navbar-toggler").click(function(){
     $(".navbar-collapse").slideToggle(600);
   });
+
+  $("#hideDetails").click(function(e) {
+    e.preventDefault();
+    $("#postDetails").fadeOut(function() {
+      $("#postDetails").removeClass('col-4');
+      $("#post").addClass('col-12');
+      $("#showDetails").show();
+    });
+  });
+
+  $("#showDetails").click(function(e) {
+    e.preventDefault();
+    $("#postDetails").addClass('col-4').show(function() {
+      $("#post").removeClass('col-12');
+      $("#showDetails").hide();
+    });
+  });
 });
