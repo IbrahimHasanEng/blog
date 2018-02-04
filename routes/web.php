@@ -17,8 +17,9 @@ Route::group(['middleware' => ['web']], function () {
     ->where('slug', '[\w\d\-\_]+');
     Route::get('blog', 'BlogController@getIndex')->name('blog.index');
     Route::get('contact', 'PagesController@getContact');
+    Route::post('contact', 'PagesController@postContact');
     Route::get('about', 'PagesController@getAbout');
-    Route::get('/', 'PagesController@getIndex');
+    Route::get('/', 'PagesController@getIndex')->name('welcome');
     Route::resource('posts', 'PostController');
     Route::resource('categories', 'CategoryController', ['except' => ['create']]);
     Route::resource('tags', 'TagController', ['except' => ['create']]);

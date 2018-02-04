@@ -25,7 +25,7 @@ date_default_timezone_set('Europe/Istanbul');
     {{--  @yield('carousel')  --}}
 
     <div class="container pt-5">
-      {{--  @include('partials._messages')  --}}
+      @include('partials._messages')
       @yield('content')
 
     </div><!-- End of Container -->
