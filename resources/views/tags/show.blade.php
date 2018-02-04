@@ -1,19 +1,19 @@
 @extends('layouts.app')
 
-@section('title', '- قسم {{ $category->name }}')
+@section('title', '- وسم {{ $tag->name }}')
 
 @section('content')
   <div class="row">
     <div class="col-12">
         <div class="d-flex justify-content-between align-items-center">
-            <h1>قسم {{ $category->name }}</h1>
+            <h1>وسم {{ $tag->name }}</h1>
             <div>
-                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary">تعديل اسم القسم</a>
-                <a href="{{ route('categories.index') }}" class="btn btn-success">إنشاء قسم جديد</a>
+                <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-primary">تعديل اسم الوسم</a>
+                <a href="{{ route('tags.index') }}" class="btn btn-success">إنشاء وسم جديد</a>
             </div>
         </div>
-        <h3 class="text-secondary mt-3">{{ $category->posts()->count() ? 'عدد المقالات: ' . $category->posts()->count() : 'لا يوجد أي مقال ضمن هذا القسم.' }}</h3>
-      @if($category->posts()->count())
+        <h3 class="text-secondary mt-3">{{ $tag->posts()->count() ? 'عدد المقالات التي تحتوي هذا الوسم: ' . $tag->posts()->count() : 'لا ينتمي هذا الوسم إلى أي مقال.' }}</h3>
+      @if($tag->posts()->count())
         <hr>
         <table class="table table-striped">
             <thead>
@@ -25,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($category->posts as $post)
+                @foreach($tag->posts as $post)
                     <tr>
                     <td>{{ $post->title }}</td>
                     <td class="d-none d-md-table-cell">ابراهيم حسن</td>

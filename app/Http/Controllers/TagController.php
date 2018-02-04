@@ -21,7 +21,7 @@ class TagController extends Controller
     public function index()
     {
         //
-        $tags = Tag::all();
+        $tags = Tag::orderBy('id')->paginate(10);
         $posts = Post::all();
         return view('tags.index')->withTags($tags)->withPosts($posts);
     }
@@ -42,6 +42,7 @@ class TagController extends Controller
         $tag = new Tag;
 
         $tag->name = $request->name;
+
         $tag->save();
 
         Session::flash('success', 'تم إضافة الوسم بنجاح!');
@@ -58,6 +59,9 @@ class TagController extends Controller
     public function show($id)
     {
         //
+        $tag = Tag::find($id);
+
+        return view('tags.show')->withTag($tag);
     }
 
     /**
@@ -69,6 +73,9 @@ class TagController extends Controller
     public function edit($id)
     {
         //
+        $tag = Tag::find($id);
+
+        return view('tags.edit')->withTag($tag);
     }
 
     /**
@@ -81,6 +88,19 @@ class TagController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $tag = Tag::find($id);
+
+        $this->validate($request, [
+            'name' => 'required|max:255'
+        ]);
+
+        $tag->name = $request->name;
+
+        $tag->save();
+
+        Session::flash('success', 'تم تعديل اسم الوسم بنجاح');
+
+        return redirect()->route('tags.show', $tag->id);
     }
 
     /**
