@@ -28,8 +28,8 @@
             </td>
             <td>{{ Date::parse(strtotime($category->created_at))->format('j F، Y') }}</td>
             <td>
-                {{--  <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary btn-sm">تعديل</a> 
-                {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
+                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary btn-sm">تعديل</a> 
+                {{--  {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
                 {!! Form::submit('حذف', ['class' => 'btn btn-danger btn-sm']) !!}
                 {!! Form::close() !!}  --}}
             </td>

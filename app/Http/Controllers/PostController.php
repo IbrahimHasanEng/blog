@@ -127,8 +127,6 @@ class PostController extends Controller
         'body' => 'required'
         ));
 
-        $post = Post::find($id);
-
         $post->title = $request->input('title');
         $post->category_id = $request->input('category_id');
         $post->body = $request->input('body');

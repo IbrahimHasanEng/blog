@@ -7,7 +7,10 @@
     <div class="col-12">
         <div class="d-flex justify-content-between align-items-center">
             <h1>قسم {{ $category->name }}</h1>
-            <a href="{{ route('categories.index') }}" class="btn btn-success">إنشاء قسم جديد</a>
+            <div>
+                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary">تعديل اسم القسم</a>
+                <a href="{{ route('categories.index') }}" class="btn btn-success">إنشاء قسم جديد</a>
+            </div>
         </div>
         <h3 class="text-secondary mt-3">{{ $category->posts()->count() ? 'عدد المقالات: ' . $category->posts()->count() : 'لا يوجد أي مقال ضمن هذا القسم.' }}</h3>
       @if($category->posts()->count())
