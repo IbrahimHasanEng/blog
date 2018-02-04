@@ -29,9 +29,9 @@
             <td>{{ Date::parse(strtotime($tag->created_at))->format('j F، Y') }}</td>
             <td>
                 <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-primary btn-sm">تعديل</a> 
-                {{--  {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
+                {!! Form::open(['route' => ['tags.destroy', $tag->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
                 {!! Form::submit('حذف', ['class' => 'btn btn-danger btn-sm']) !!}
-                {!! Form::close() !!}  --}}
+                {!! Form::close() !!}
             </td>
           </tr>
         @endforeach
@@ -50,7 +50,6 @@
                     <div class="col-12">
                         {!! Form::open(['route' => 'tags.store', 'method' => 'POST']) !!}
                         <div class="form-group">
-                        {{ Form::label('name', 'الوسمات') }}
                         {{ Form::text('name', null, ['class' => 'form-control']) }}
                         @if ($errors->has('name'))
                             <div class="text-danger">

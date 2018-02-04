@@ -117,7 +117,8 @@
 .navbar {
     font-size: 17px;
     font-weight: 600;
-    border: 1px solid #eee;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
     border-left: 0;
     background: #fff;
     box-shadow: 0 3px 2px 0 rgba(0, 0, 0, .03);
@@ -150,6 +151,8 @@
     .dropdown-menu {
         border-radius: 0;
         font-size: inherit;
+        box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.03);
+        border: 1px solid #eee;
 
         .dropdown-item {
             font-weight: 500;

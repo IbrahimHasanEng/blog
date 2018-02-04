@@ -50,7 +50,6 @@
                     <div class="col-12">
                         {!! Form::open(['route' => 'categories.store', 'method' => 'POST']) !!}
                         <div class="form-group">
-                        {{ Form::label('name', 'الأقسام') }}
                         {{ Form::text('name', null, ['class' => 'form-control', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'أدخل اسماً معرفاً من فضلك']) }}
                         @if ($errors->has('name'))
                             <div class="text-danger">

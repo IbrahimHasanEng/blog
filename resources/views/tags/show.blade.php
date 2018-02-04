@@ -33,9 +33,9 @@
                     <td>
                         <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success btn-sm">عرض</a> 
                         <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary btn-sm">تعديل</a> 
-                        {{--  {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
+                        {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
                         {!! Form::submit('حذف', ['class' => 'btn btn-danger btn-sm']) !!}
-                        {!! Form::close() !!}  --}}
+                        {!! Form::close() !!}
                     </td>
                     </tr>
                 @endforeach

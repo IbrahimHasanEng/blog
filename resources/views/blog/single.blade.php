@@ -12,6 +12,12 @@
       <h1 class="mt-4">{{ $post->title }}</h1>
       <hr>
       <div class="lead">{!! $post->body !!}</div>
+      <hr>
+      <div>
+        @foreach($post->tags as $tag)
+        <span class="badge badge-dark">{{ $tag->name }}</span>
+        @endforeach
+      </div>
     </div>
     <div id="postDetails" class="col-4">
       <div class="card" style="top: 100px; position: sticky;">

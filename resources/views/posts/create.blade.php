@@ -68,7 +68,7 @@
         language: 'ar'
     });
 
-    $('.tags').select2();
+    $('.tags').select2({'placeholder': 'أضف الوسوم التي تريدها هنا'});
 
     $(window).resize(function() {
         $('.tags').select2();

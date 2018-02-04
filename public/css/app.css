@@ -13232,7 +13232,8 @@ h6 {
 .navbar {
   font-size: 17px;
   font-weight: 600;
-  border: 1px solid #eee;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
   border-left: 0;
   background: #fff;
   -webkit-box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.03);
@@ -13267,6 +13268,9 @@ h6 {
 .navbar .dropdown-menu {
   border-radius: 0;
   font-size: inherit;
+  -webkit-box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.03);
+          box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.03);
+  border: 1px solid #eee;
 }
 
 .navbar .dropdown-menu .dropdown-item {

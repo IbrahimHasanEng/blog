@@ -10,13 +10,14 @@
   </div>
   <hr>
   <div class="row">
-    <div class="col-10 m-auto">
+    <div class="col-12 m-auto">
       <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">عنوان المقال</th>
             <th scope="col">القسم</th>
+            <th scope="col">الوسوم</th>
             <th scope="col">تاريخ الإنشاء</th>
             <th scope="col">الأدوات</th>
           </tr>
@@ -27,6 +28,18 @@
             <th scope="row">{{ $post->id }}</th>
             <td>{{ $post->title }}</td>
             <td>{{ $post->category->name }}</td>
+            <td>
+              <?php $count = 0; ?>
+              @foreach($post->tags as $tag)
+                <?php $count++; ?>
+                @if($count <= 4)
+                  <span class="badge badge-dark">{{ $tag->name }}</span>
+                @else
+                  {{ '..' }}
+                  @break
+                @endif
+              @endforeach
+            </td>
             <td>{{ Date::parse(strtotime($post->created_at))->format('j F، Y') }}</td>
             <td>
               <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success btn-sm">عرض</a> 
