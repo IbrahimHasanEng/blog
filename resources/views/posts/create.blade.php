@@ -23,9 +23,9 @@
 <div class="form-group">
   {{ Form::label('category_id', 'القسم:') }}
   <select class="custom-select" name="category_id">
-      @foreach($categories as $category)
-      <option value="{{ $category->id }}">{{ $category->name }}</option>
-      @endforeach
+        @foreach($categories as $category)
+        <option value="{{ $category->id }}">{{ $category->name }}</option>
+        @endforeach
   </select>
   @if ($errors->has('category_id'))
       <div class="text-danger">
