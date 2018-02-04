@@ -21,7 +21,7 @@
   @endif
 </div>
 <div class="form-group">
-  {{ Form::label('category_id', 'التصنيف:') }}
+  {{ Form::label('category_id', 'القسم:') }}
   <select class="custom-select" name="category_id">
       @foreach($categories as $category)
       <option value="{{ $category->id }}">{{ $category->name }}</option>

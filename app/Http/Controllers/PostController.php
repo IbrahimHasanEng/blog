@@ -92,7 +92,20 @@ class PostController extends Controller
         //
         $post = Post::find($id);
         $categories = Category::all();
-        return view('posts.edit')->withPost($post)->withCategories($categories);
+        $_categories = array();
+        foreach($categories as $category) {
+            $_categories[$category->id] = $category->name;
+        }
+        $tags = Tag::all();
+        $_tags = array();
+        foreach($tags as $tag) {
+            $_tags[$tag->id] = $tag->name;
+        }
+
+        return view('posts.edit')
+        ->withPost($post)
+        ->withCategories($_categories)
+        ->withTags($_tags);
     }
 
     /**
@@ -121,6 +134,12 @@ class PostController extends Controller
         $post->body = $request->input('body');
 
         $post->save();
+
+        if(isset($request->tags)) {
+            $post->tags()->sync($request->tags);
+        } else {
+            $post->tags()->sync(array());
+        }
 
         Session::flash('success', 'تم حفظ التعديلات بنجاح.');
 

@@ -8,6 +8,13 @@
       <h1>{{ $post->title }}</h1>
       <hr>
       <div class="lead">{!! $post->body !!}</div>
+      
+      <hr>
+      <div>
+        @foreach($post->tags as $tag)
+        <span class="badge badge-dark">{{ $tag->name }}</span>
+        @endforeach
+      </div>
     </div>
     <div class="col-4">
       <div class="card">
@@ -19,7 +26,7 @@
             <h6>الكاتب:</h6>
             <p>ابراهيم حسن</p>
 
-            <h6>التصنيف:</h6>
+            <h6>القسم:</h6>
             <p>{{ $post->category->name }}</p>
 
             <h6>تاريخ الإنشاء:</h6>

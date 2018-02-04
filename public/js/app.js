@@ -11368,12 +11368,12 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 
   $(".dropdown-toggle").click(function () {
-    $(".dropdown-menu").slideToggle();
+    $(".dropdown-menu").slideToggle(300);
   });
 
   $(document).click(function (e) {
     if ($(e.target).closest('.dropdown-menu').length === 0) {
-      $(".dropdown-menu").slideUp();
+      $(".dropdown-menu").slideUp(300);
     }
   });
 

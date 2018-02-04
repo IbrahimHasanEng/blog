@@ -22,7 +22,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $categories = Category::all();
+        $categories = Category::orderBy('id')->paginate(10);
         $posts = Post::all();
 
         return view('categories.index')->withCategories($categories)->withPosts($posts);
@@ -47,7 +47,7 @@ class CategoryController extends Controller
 
         $category->save();
 
-        Session::flash('success', 'تم إضافة تصنيف جديد بنجاح!');
+        Session::flash('success', 'تم إنشاء قسم جديد بنجاح!');
 
         return redirect()->route('categories.index');
     }
@@ -61,6 +61,9 @@ class CategoryController extends Controller
     public function show($id)
     {
         //
+        $category = Category::find($id);
+
+        return view('categories.show')->withCategory($category);
     }
 
     /**

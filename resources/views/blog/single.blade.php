@@ -21,7 +21,7 @@
             <h6>الكاتب:</h6>
             <p>ابراهيم حسن</p>
 
-            <h6>التصنيف:</h6>
+            <h6>القسم:</h6>
             <p>{{ $post->category->name }}</p>
             <h6>تاريخ الإنشاء:</h6>
             <p>{{ Date::parse(strtotime($post->created_at))->format('الساعة H:i من j F، Y') }}</p>

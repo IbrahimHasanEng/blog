@@ -10,13 +10,13 @@
   </div>
   <hr>
   <div class="row">
-    <div class="col-8 m-auto">
+    <div class="col-10 m-auto">
       <table class="table table-striped">
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">عنوان المقال</th>
-            <th scope="col">التصنيف</th>
+            <th scope="col">القسم</th>
             <th scope="col">تاريخ الإنشاء</th>
             <th scope="col">الأدوات</th>
           </tr>
@@ -29,8 +29,11 @@
             <td>{{ $post->category->name }}</td>
             <td>{{ Date::parse(strtotime($post->created_at))->format('j F، Y') }}</td>
             <td>
-              <a href="{{ route('posts.show', $post->id) }}" class="btn btn-link btn-sm">عرض</a>
-              <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-link btn-sm">تعديل</a>
+              <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success btn-sm">عرض</a> 
+              <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary btn-sm">تعديل</a> 
+              {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
+              {!! Form::submit('حذف', ['class' => 'btn btn-danger btn-sm']) !!}
+              {!! Form::close() !!}
             </td>
           </tr>
         @endforeach

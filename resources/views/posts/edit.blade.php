@@ -2,6 +2,10 @@
 
 @section('title', '- عرض المقال')
 
+@section('styles')
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+@endsection
+
 @section('content')
 <div class="container">
   <div class="row">
@@ -17,13 +21,17 @@
         @endif
       </div>
       <div class="form-group">
-          {{ Form::label('category_id', 'التصنيف:') }}
-          <select class="custom-select" name="category_id">
-              <option style="font-style: italic; background: #ddd;" value="{{ $post->category->id }}" selected>محددة: {{ $post->category->name }}</option>
-              @foreach($categories as $category)
-              <option value="{{ $category->id }}">{{ $category->name }}</option>
-              @endforeach
-          </select>
+          {{ Form::label('category_id', 'القسم:') }}
+          {{ Form::select('category_id', $categories, null, array('class' => 'form-control custom-select')) }}
+          @if ($errors->has('category_id'))
+              <div class="text-danger">
+                  <strong>{{ $errors->first('category_id') }}</strong>
+              </div>
+          @endif
+      </div>
+      <div class="form-group">
+          {{ Form::label('tags', 'الوسوم:') }}
+          {{ Form::select('tags[]', $tags, null, ['class' => 'form-control custom-select tags', 'multiple' => 'multiple']) }}
           @if ($errors->has('category_id'))
               <div class="text-danger">
                   <strong>{{ $errors->first('category_id') }}</strong>
@@ -48,7 +56,7 @@
             <h6>الكاتب:</h6>
             <p>ابراهيم حسن</p>
 
-            <h6>التصنيف:</h6>
+            <h6>القسم:</h6>
             <p>{{ $post->category->name }}</p>
 
             <h6>تاريخ الإنشاء:</h6>
@@ -76,9 +84,16 @@
 
 @section('scripts')
   {!! Html::script('vendor/ckeditor/ckeditor.js') !!}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.min.js"></script>
   <script>
-      CKEDITOR.replace('edit_post', {
-          language: 'ar'
-      });
+    CKEDITOR.replace('edit_post', {
+        language: 'ar'
+    });
+
+    $('.tags').select2();
+
+    $(window).resize(function() {
+        $('.tags').select2();
+    });
   </script>
 @endsection
