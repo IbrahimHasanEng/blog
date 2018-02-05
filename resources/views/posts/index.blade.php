@@ -45,7 +45,10 @@
               <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success btn-sm">عرض</a> 
               <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary btn-sm">تعديل</a> 
               {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
-              {!! Form::submit('حذف', ['class' => 'btn btn-danger btn-sm']) !!}
+              <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDelete{{ $post->id }}">
+                  حذف
+              </button>
+              @include('partials._confirm-delete', ['title' => 'تأكيد حذف المقال', 'question' => 'هل أنت متأكد أنك تريد حذف المقال &#x27;' . $post->title . '&#x27;؟', 'idSuffex' => $post->id])
               {!! Form::close() !!}
             </td>
           </tr>

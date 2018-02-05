@@ -30,7 +30,15 @@
             <td>
                 <a href="{{ route('tags.edit', $tag->id) }}" class="btn btn-primary btn-sm">تعديل</a> 
                 {!! Form::open(['route' => ['tags.destroy', $tag->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
-                {!! Form::submit('حذف', ['class' => 'btn btn-danger btn-sm']) !!}
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDelete{{ $tag->id }}">
+                    حذف
+                </button>
+                @if($tag->posts()->count() > 0)
+                @include('partials._confirm-delete', ['title' => 'تأكيد حذف الوسم', 'question' => 'لدى بعض المقالات الوسم &#x27;' . $tag->name . '&#x27;. هل أنت متأكد أنك تريد حذفه؟', 'idSuffex' => $tag->id])
+                @else
+                @include('partials._confirm-delete', ['title' => 'تأكيد حذف الوسم', 'question' => 'هل أنت متأكد أنك تريد حذف الوسم &#x27;' . $tag->name . '&#x27;؟', 'idSuffex' => $tag->id])
+                @endif
                 {!! Form::close() !!}
             </td>
           </tr>

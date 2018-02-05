@@ -40,19 +40,14 @@ $(function () {
 
   $("#hideDetails").click(function(e) {
     e.preventDefault();
-    $("#postDetails").fadeOut(function() {
-      $("#postDetails").removeClass('col-4');
-      $("#post").addClass('col-12');
-      $("#showDetails").show();
-    });
+    $("#postDetails").fadeOut();
+    $("#showDetails").fadeIn();
   });
 
   $("#showDetails").click(function(e) {
     e.preventDefault();
-    $("#postDetails").addClass('col-4').show(function() {
-      $("#post").removeClass('col-12');
-      $("#showDetails").hide();
-    });
+    $("#postDetails").fadeIn();
+    $("#showDetails").fadeOut();
   });
 
   

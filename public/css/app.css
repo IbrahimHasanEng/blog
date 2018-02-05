@@ -13127,6 +13127,19 @@ a.text-dark:focus {
   }
 }
 
+.alert {
+  border-radius: 2rem;
+}
+
+.alert h5 {
+  margin: 0;
+}
+
+.alert-success {
+  background: #28a745;
+  color: #fff;
+}
+
 body {
   font-family: Palatino;
   font-size: 0.9rem;
