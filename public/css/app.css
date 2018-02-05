@@ -13143,8 +13143,9 @@ h6 {
 
 .top-nav {
   background: #fff;
-  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03);
-          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03);
+  -webkit-box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.03);
+          box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid #eee;
   height: 2.25rem;
 }
 
