@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://dashboard.heroku.com/apps/desolate-caverns-64200'),
 
     /*
     |--------------------------------------------------------------------------
