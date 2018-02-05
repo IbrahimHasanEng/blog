@@ -16,13 +16,41 @@
     <div class="time w-25 text-left"><i class="fa fa-clock-o fa-fw fa-lg"></i> {{ Date::parse('now', date_default_timezone_get())->format('الساعة H:i بتوقيت إسطنبول') }}</div>
   </div>
 </div><!-- Here Header Ends -->
-
+@if(Request::is('/'))
+<div id="carousel" class="carousel slide" data-ride="carousel" dir="rtl" data-interval="5000">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" data-src="holder.js/800x300?auto=yes&amp;bg=555&amp;fg=333&amp;text=First slide" alt="Third slide [800x300]" src="images/1.jpg" data-holder-rendered="true">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" data-src="holder.js/800x300?auto=yes&amp;bg=555&amp;fg=333&amp;text=Second slide" alt="Third slide [800x300]" src="images/2.jpg" data-holder-rendered="true">
+    </div>
+    <div class="carousel-item">
+    <img class="d-block w-100" data-src="holder.js/800x300?auto=yes&amp;bg=555&amp;fg=333&amp;text=Third slide" alt="Third slide [800x300]" src="images/3.jpg" data-holder-rendered="true">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="next">
+    <i class="fa fa-arrow-left fa-2x fa-fw"></i>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="prev">
+    <i class="fa fa-arrow-right fa-2x fa-fw"></i>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+@else
 <!-- Here Logo Starts -->
-<div class="row justify-content-center w-100 d-none d-md-flex">
-  <div class="col-4 mt-3 mb-2">
+<div class="justify-content-center w-100 d-none d-md-flex">
+  <div class="w-25 mt-3 mb-2">
     <img class="img-fluid" src="{{ asset('images/logo.png') }}" alt="logo">
   </div>
 </div><!-- Here Logo Ends -->
+@endif
 
 <!-- Navbar Starts -->
 <nav class="navbar navbar-expand-md navbar-light">
@@ -46,8 +74,7 @@
           <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">تسجيل الدخول</a></li>
       @else
       <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          أهلاً ابراهيم <i class="fa fa-chevron-down"></i></a>
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">!أهلاً {{ substr((Auth::user()->name), 0, strpos(Auth::user()->name, ' ')) }} <i class="fa fa-chevron-down fa-fw"></i></a>
         <div class="dropdown-menu dropdown-menu-left text-center animated" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{ route('posts.create') }}">إنشاء مقال جديد</a>
           <a class="dropdown-item" href="{{ route('posts.index') }}">المقالات</a>
