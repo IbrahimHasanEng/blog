@@ -7,7 +7,7 @@
     .date,
     .time {
         color: #000;
-        font-size: 14px;
+        font-size: 0.7rem;
     }
 
     .social-top {
@@ -116,14 +116,13 @@
 }
 
 .navbar {
-    font-size: 17px;
+    font-size: $font-size-base;
     font-weight: 600;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
     border-left: 0;
     background: #fff;
     box-shadow: 0 3px 2px 0 rgba(0, 0, 0, .03);
-    min-height: 3.5rem;
     position: fixed;
     top: 0;
     z-index: 2;
@@ -154,6 +153,7 @@
         font-size: inherit;
         box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.03);
         border: 1px solid #eee;
+        margin: 0;
 
         .dropdown-item {
             font-weight: 500;
@@ -183,7 +183,7 @@
 
         .nav-link {
             margin: 0 0.1rem;
-            padding: 0.8rem 0.8rem;
+            padding: 0.8rem 0.8rem 0.7rem 0.8rem;
             border-bottom: 0.1rem solid transparent;
             @include transition(all, 0.2s);
 

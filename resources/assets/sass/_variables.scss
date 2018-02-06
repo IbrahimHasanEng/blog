@@ -48,20 +48,14 @@ $custom-dropdown-link-hover-bg:            lighten(#29357f, 25%) !default;
 /*
  * External fonts
  */
-@font-face {
-    font-family: GE;
-    src: url('/fonts/GE_SS_Two_Light.otf');
-}
 
-@font-face {
-    font-family: Palatino;
-    src: url('/fonts/Bahij-Palatino-Sans-Arabic-Regular.ttf');
-}
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
 
 // Typography
 $font-family-sans-serif: sans-serif;
-$font-arabic-headings: GE;
-$font-arabic-normal: Palatino;
+$font-arabic-headings: 'Droid Arabic Kufi', serif;
+$font-arabic-normal: 'Droid Arabic Naskh', serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 $text-color: #627179;
