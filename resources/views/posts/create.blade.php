@@ -10,7 +10,7 @@
 
 <h1>مقال جديد</h1>
 <hr>
-{!! Form::open(array('route' => 'posts.store')) !!}
+{!! Form::open(array('route' => 'posts.store', 'files' => 'true')) !!}
 <div class="form-group">
   {{ Form::label('title', 'عنوان المقال:') }}
   {{ Form::text('title', null, array('class' => 'form-control', 'placeholder' => 'اكتب عنوان المقال هنا')) }}
@@ -45,7 +45,22 @@
             <strong>{{ $errors->first('tags') }}</strong>
         </div>
     @endif
-  </div>
+</div>
+<div class="form-group">
+    {{--  {{ Form::label('featured_image', 'صورة المقال:') }}
+    {{ Form::file('featured_image') }}  --}}
+    <div class="input-group mb-3">
+        <div class="custom-file">
+            <input type="file" name="featured_image" id="inputFile">
+            <label class="custom-file-label" name="featured_image" for="inputFile">اختر صورة المقال الرئيسية</label>
+        </div>
+    </div>
+    @if ($errors->has('featured_image'))
+        <div class="text-danger">
+            <strong>{{ $errors->first('featured_image') }}</strong>
+        </div>
+    @endif
+</div>
 <div class="form-group">
   {{ Form::label('body', 'محتوى المقال:') }}
   {{ Form::textarea('body', null, array('id' => 'create_post', 'class' => 'form-control', 'placeholder' => 'اكتب المقال هنا')) }}

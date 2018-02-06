@@ -70,3 +70,12 @@
     background: $success;
     color: $white;
 }
+
+.custom-file-label {
+    padding: 0.375rem 5.75rem;
+    overflow: hidden;
+}
+
+.custom-file-label::after {
+    content: "استعراض";
+}
