@@ -13,10 +13,10 @@
  * (1) http://ckeditor.com/builder
  *     Visit online builder to build CKEditor from scratch.
  *
- * (2) http://ckeditor.com/builder/2ba7752d06b3ed7253f8ca4cef95f281
+ * (2) http://ckeditor.com/builder/9125b2afd5e68cc778651aa8ec73ea0e
  *     Visit online builder to build CKEditor, starting with the same setup as before.
  *
- * (3) http://ckeditor.com/builder/download/2ba7752d06b3ed7253f8ca4cef95f281
+ * (3) http://ckeditor.com/builder/download/9125b2afd5e68cc778651aa8ec73ea0e
  *     Straight download link to the latest version of CKEditor (Optimized) with the same setup as before.
  *
  * NOTE:
@@ -25,7 +25,7 @@
  */
 
 var CKBUILDER_CONFIG = {
-	skin: 'moonocolor',
+	skin: 'moono-lisa',
 	preset: 'standard',
 	ignore: [
 		'.DS_Store',
@@ -57,7 +57,6 @@ var CKBUILDER_CONFIG = {
 		'bidi' : 1,
 		'blockquote' : 1,
 		'clipboard' : 1,
-		'colorbutton' : 1,
 		'contextmenu' : 1,
 		'elementspath' : 1,
 		'enterkey' : 1,

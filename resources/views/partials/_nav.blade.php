@@ -28,10 +28,10 @@
       <img class="d-block w-100" data-src="holder.js/800x300?auto=yes&amp;bg=555&amp;fg=333&amp;text=First slide" alt="Third slide [800x300]" src="images/1.png" data-holder-rendered="true">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" data-src="holder.js/800x300?auto=yes&amp;bg=555&amp;fg=333&amp;text=Second slide" alt="Third slide [800x300]" src="images/2.jpg" data-holder-rendered="true">
+      <img class="d-block w-100" data-src="holder.js/800x300?auto=yes&amp;bg=555&amp;fg=333&amp;text=Second slide" alt="Third slide [800x300]" src="images/2.png" data-holder-rendered="true">
     </div>
     <div class="carousel-item">
-    <img class="d-block w-100" data-src="holder.js/800x300?auto=yes&amp;bg=555&amp;fg=333&amp;text=Third slide" alt="Third slide [800x300]" src="images/3.jpg" data-holder-rendered="true">
+    <img class="d-block w-100" data-src="holder.js/800x300?auto=yes&amp;bg=555&amp;fg=333&amp;text=Third slide" alt="Third slide [800x300]" src="images/3.png" data-holder-rendered="true">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carousel" role="button" data-slide="next">

@@ -65,7 +65,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.min.js"></script>
   <script>
     CKEDITOR.replace('create_post', {
-        language: 'ar'
+        language: 'ar',
+        filebrowserBrowseUrl: "{{asset('vendor/ckeditor/ckfinder/ckfinder.html')}}",
+        filebrowserImageBrowseUrl: "{{asset('vendor/ckeditor/ckfinder/ckfinder.html?type=Images')}}",
+        filebrowserUploadUrl: "{{asset('vendor/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files')}}",
+        filebrowserImageUploadUrl: "{{asset('vendor/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images')}}"
     });
 
     $('.tags').select2({'placeholder': 'أضف الوسوم التي تريدها هنا'});
