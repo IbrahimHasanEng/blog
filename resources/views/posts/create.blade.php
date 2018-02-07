@@ -47,8 +47,7 @@
     @endif
 </div>
 <div class="form-group">
-    {{--  {{ Form::label('featured_image', 'صورة المقال:') }}
-    {{ Form::file('featured_image') }}  --}}
+    {{ Form::label('featured_image', 'صورة المقال الرئيسية:') }}
     <div class="input-group mb-3">
         <div class="custom-file">
             <input type="file" name="featured_image" id="inputFile">

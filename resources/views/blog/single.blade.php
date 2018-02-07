@@ -9,6 +9,7 @@
 @section('content')
   <div class="row">
     <div id="post" class="col-8">
+      <img class="img-fluid" src="{{ asset('images/featured/' . $post->image) }}">
       <h1 class="mt-4">{{ $post->title }}</h1>
       <hr>
       <div class="lead">{!! $post->body !!}</div>
