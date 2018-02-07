@@ -29,13 +29,7 @@ date_default_timezone_set('Europe/Istanbul');
 
     </div><!-- End of Container -->
 
-    <footer>
-      <hr>
-      <div id="app" class="text-center">
-        {{-- <example-component></example-component> --}}
-      جميع الحقوق محفوظة 2018 &copy; ابراهيم حسن
-      </div>
-    </footer>
+    @include('partials._footer')
 
     @include('partials._scripts')
 
