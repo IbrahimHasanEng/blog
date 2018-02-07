@@ -10,7 +10,7 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
-      {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT']) !!}
+      {!! Form::model($post, ['route' => ['posts.update', $post->id], 'method' => 'PUT', 'files' => 'true']) !!}
       <div class="form-group">
         {{ Form::label('title', 'عنوان المقال:') }}
         {{ Form::text('title', null, array('class' => 'form-control form-control-lg')) }}
@@ -37,6 +37,20 @@
                   <strong>{{ $errors->first('category_id') }}</strong>
               </div>
           @endif
+      </div>
+      <div class="form-group">
+        {{ Form::label('featured_image', 'صورة المقال الرئيسية:') }}
+        <div class="input-group mb-3">
+            <div class="custom-file">
+                <input type="file" name="featured_image" id="inputFile">
+                <label class="custom-file-label" name="featured_image" for="inputFile">{{ isset($post->image) ? asset('images/featured/' . $post->image) : 'اختر صورة المقال الرئيسية' }}</label>
+            </div>
+        </div>
+        @if ($errors->has('featured_image'))
+            <div class="text-danger">
+                <strong>{{ $errors->first('featured_image') }}</strong>
+            </div>
+        @endif
       </div>
       <div class="form-group">
         {{ Form::label('body', 'محتوى المقال:') }}
