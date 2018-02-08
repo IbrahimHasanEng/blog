@@ -18,6 +18,13 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
+        DB::table('categories')->insert(
+            array(
+                'id' => '1',
+                'name' => 'لا ينتمي لقسم'
+            )
+        );
     }
 
     /**
