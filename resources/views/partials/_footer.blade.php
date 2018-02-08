@@ -14,20 +14,15 @@
             <h5>أقسام</h5>
             <hr>
             <div class="row h-75 justify-content-between mx-0">
-                <a href="#" class="footer-col-2-item-1 d-flex col-md-6">أخبار</a>
-                <a href="#" class="footer-col-2-item-2 d-flex col-md-6">أعمال</a>
-                <a href="#" class="footer-col-2-item-3 d-flex col-md-6">تكنولوجيا</a>
-                <a href="#" class="footer-col-2-item-4 d-flex col-md-6">سفر</a>
-                <a href="#" class="footer-col-2-item-5 d-flex col-md-6">رياضة</a>
-                <a href="#" class="footer-col-2-item-6 d-flex col-md-6">أخبار</a>
-                <a href="#" class="footer-col-2-item-7 d-flex col-md-6">أعمال</a>
-                <a href="#" class="footer-col-2-item-8 d-flex col-md-6">تكنولوجيا</a>
-                <a href="#" class="footer-col-2-item-9 d-flex col-md-6">سفر</a>
-                <a href="#" class="footer-col-2-item-10 d-flex col-md-6">رياضة</a>
-                <a href="#" class="footer-col-2-item-11 d-flex col-md-6">سياحة</a>
-                <a href="#" class="footer-col-2-item-12 d-flex col-md-6">برمجة</a>
-                <a href="#" class="footer-col-2-item-13 d-flex col-md-6">إعلان</a>
-                <a href="#" class="footer-col-2-item-14 d-flex col-md-6">فلسفة</a>
+              @foreach($categoriesFooter as $category)
+                @if($category->id !== 1)
+                  @if($categoriesFooter->count() > 8)
+                  <a href="" class="footer-col-2-item-1 d-flex col-md-6">{{ $category->name }}</a>
+                  @else
+                  <a href="" class="footer-col-2-item-1 d-flex col-md-12">{{ $category->name }}</a>
+                  @endif
+                @endif
+              @endforeach
             </div>
         </div>
         <div class="footer-col-3 col-lg-4 col-sm-12 col-md-6 mb-3">

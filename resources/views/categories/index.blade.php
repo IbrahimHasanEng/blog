@@ -29,9 +29,19 @@
             <td>{{ Date::parse(strtotime($category->created_at))->format('j F، Y') }}</td>
             <td>
                 <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary btn-sm">تعديل</a> 
-                {{--  {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
-                {!! Form::submit('حذف', ['class' => 'btn btn-danger btn-sm']) !!}
-                {!! Form::close() !!}  --}}
+                @if($category->id !== 1)
+                    {!! Form::open(['route' => ['categories.destroy', $category->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDelete{{ $category->id }}">
+                        حذف
+                    </button>
+                    @if($category->posts()->count() > 0)
+                        @include('partials._confirm-delete', ['title' => 'تأكيد حذف الوسم', 'question' => 'يحتوي القسم &#x27;' . $category->name . '&#x27; على مقال أو أكثر. هل أنت متأكد أنك تريد حذفه؟', 'idSuffex' => $category->id])
+                    @else
+                        @include('partials._confirm-delete', ['title' => 'تأكيد حذف الوسم', 'question' => 'هل أنت متأكد أنك تريد حذف القسم &#x27;' . $category->name . '&#x27;؟', 'idSuffex' => $category->id])
+                    @endif
+                    {!! Form::close() !!}
+                @endif
             </td>
           </tr>
         @endforeach

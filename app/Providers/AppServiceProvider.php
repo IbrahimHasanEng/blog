@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use App\Category;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +17,11 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
+
+        view()->composer('partials._footer', function($view) {
+            $categories = Category::all();
+            $view->withCategoriesFooter($categories);
+        });
     }
 
     /**

@@ -114,5 +114,19 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+        $category = Category::find($id);
+        $posts = Post::where('category_id', '=', $category->id)->get();
+
+        
+        foreach($posts as $post) {
+            $post->category_id = 1;
+            $post->save();
+        }
+        
+        $category->delete();
+
+        Session::flash('success', 'تم حذف القسم بنجاح!');
+
+        return redirect()->route('categories.index');
     }
 }
