@@ -17,9 +17,9 @@
               @foreach($categoriesFooter as $category)
                 @if($category->id !== 1)
                   @if($categoriesFooter->count() > 8)
-                  <a href="" class="footer-col-2-item-1 d-flex col-md-6">{{ $category->name }}</a>
+                  <a href="" class="footer-col-2-item-1 d-flex col-md-6"><span>{{ $category->name }}</span></a>
                   @else
-                  <a href="" class="footer-col-2-item-1 d-flex col-md-12">{{ $category->name }}</a>
+                  <a href="" class="footer-col-2-item-1 d-flex col-md-12"><span>{{ $category->name }}</span></a>
                   @endif
                 @endif
               @endforeach
@@ -69,13 +69,17 @@
       </div>
     </div>
   </div>
-  <footer class="secondary-footer">
-    <div class="container social-media">
-      <span>للتواصل معنا:</span>
-      <a href="#" class="facebook"><i class="fa fa-facebook-f"></i></a>
-      <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-      <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-      <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-      <span class="copyright align-bottom">جميع الحقوق محفوظة 2018 &copy; شركة 6S</span>
+  <footer class="secondary-footer text-center">
+    <div class="row social-media align-items-center justify-content-between w-100">
+      <div class="contact-footer">
+        <span>للتواصل معنا:</span>
+        <a href="#" class="facebook"><i class="fa fa-facebook-f"></i></a>
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+      </div>
+      <div class="copyright-footer">
+        <div class="copyright">جميع الحقوق محفوظة 2018 &copy; شركة 6S</div>
+      </div>
     </div>
   </footer>

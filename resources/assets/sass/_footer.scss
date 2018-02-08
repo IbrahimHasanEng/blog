@@ -34,6 +34,11 @@
             padding: 5px 15px 5px 0;
             text-decoration: none;
             width: 100%;
+            align-items: center;
+
+            span {
+                height: 24px;
+            }
         }
     }
     $colors: #007bff, #6610f2, #6f42c1, #e83e8c, #dc3545, #fd7e14, #ffc107, #28a745, #20c997, #17a2b8, #68cc00, #872487, #039be5, #fd5a27, #39CCCC, #ffba10,#3D9970, #ff4c00, #9d5973, #70ACB5, #FF4136;  // How often you want the pattern to repeat.
@@ -91,9 +96,11 @@
     background-color: #000;
     min-height: 32px;
     font-size: 1rem;
+    display: flex;
 
-    .social-media {
+    .contact-footer {
         padding: 6px 0;
+        margin-right: 40px;
 
         span {
             color: #ddd;
@@ -169,9 +176,7 @@
         }
     }
 
-    .copyright {
-        float: left;
-        padding-top: 3px;
+    .copyright-footer {
         color: #ddd;
         margin-left: 5px;
         font-size: 0.9em;
@@ -191,10 +196,6 @@
             padding: 0;
         }
     }
-}
-  
-@media (min-width: 769px) {
-
 }
   
 @media (max-width: 1024px) {

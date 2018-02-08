@@ -10106,6 +10106,15 @@ h6 {
   height: 100% !important;
 }
 
+.lead h1,
+.lead h2,
+.lead h3,
+.lead h4,
+.lead h5,
+.lead h6 {
+  font-family: "Droid Arabic Naskh", serif;
+}
+
 .top-nav {
   background: #fff;
   -webkit-box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.03);
@@ -10345,6 +10354,13 @@ h6 {
   padding: 5px 15px 5px 0;
   text-decoration: none;
   width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .footer-col-2 a span {
+  height: 24px;
 }
 
 .footer .footer-col-2 a:nth-child(21n+1) {
@@ -10631,26 +10647,30 @@ h6 {
   background-color: #000;
   min-height: 32px;
   font-size: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.secondary-footer .social-media {
+.secondary-footer .contact-footer {
   padding: 6px 0;
+  margin-right: 40px;
 }
 
-.secondary-footer .social-media span {
+.secondary-footer .contact-footer span {
   color: #ddd;
   margin-left: 5px;
   font-size: 0.9em;
 }
 
-.secondary-footer .social-media .facebook i {
+.secondary-footer .contact-footer .facebook i {
   padding: 9px 12.875px;
   background-color: #ffffff14;
   color: #fff;
   border-radius: 50%;
 }
 
-.secondary-footer .social-media .facebook:hover i {
+.secondary-footer .contact-footer .facebook:hover i {
   background-color: #fff;
   color: #3a62b8;
   -webkit-transform: rotate(360deg);
@@ -10659,14 +10679,14 @@ h6 {
   transition: all 0.4s;
 }
 
-.secondary-footer .social-media .twitter i {
+.secondary-footer .contact-footer .twitter i {
   padding: 9px 9px;
   background-color: #ffffff14;
   color: #fff;
   border-radius: 50%;
 }
 
-.secondary-footer .social-media .twitter:hover i {
+.secondary-footer .contact-footer .twitter:hover i {
   color: #00aced;
   background-color: #fff;
   -webkit-transform: rotate(360deg);
@@ -10675,14 +10695,14 @@ h6 {
   transition: all 0.4s;
 }
 
-.secondary-footer .social-media .instagram i {
+.secondary-footer .contact-footer .instagram i {
   padding: 9px 10px;
   background-color: #ffffff14;
   color: #fff;
   border-radius: 50%;
 }
 
-.secondary-footer .social-media .instagram:hover i {
+.secondary-footer .contact-footer .instagram:hover i {
   color: #C32AA3;
   background-color: #fff;
   -webkit-transform: rotate(360deg);
@@ -10691,14 +10711,14 @@ h6 {
   transition: all 0.4s;
 }
 
-.secondary-footer .social-media .google-plus i {
+.secondary-footer .contact-footer .google-plus i {
   padding: 9px 7px;
   background-color: #ffffff14;
   color: #fff;
   border-radius: 50%;
 }
 
-.secondary-footer .social-media .google-plus:hover i {
+.secondary-footer .contact-footer .google-plus:hover i {
   color: #dd4b39;
   background-color: #fff;
   -webkit-transform: rotate(360deg);
@@ -10707,9 +10727,7 @@ h6 {
   transition: all 0.4s;
 }
 
-.secondary-footer .copyright {
-  float: left;
-  padding-top: 3px;
+.secondary-footer .copyright-footer {
   color: #ddd;
   margin-left: 5px;
   font-size: 0.9em;
