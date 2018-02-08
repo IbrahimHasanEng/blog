@@ -10,9 +10,9 @@
   <div class="row">
     <div id="post" class="col-8">
       @if(isset($post->image))
-      <img class="img-fluid" src="{{ asset('images/featured/' . $post->image) }}">
+      <img class="img-fluid img-thumbnail mb-4" src="{{ asset('images/featured/' . $post->image) }}">
       @endif
-      <h1 class="mt-4">{{ $post->title }}</h1>
+      <h1>{{ $post->title }}</h1>
       <hr>
       <div class="lead">{!! $post->body !!}</div>
       <hr>

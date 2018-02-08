@@ -46,7 +46,7 @@
 @else
 <!-- Here Logo Starts -->
 <div class="justify-content-center w-100 d-none d-md-flex">
-  <div class="w-25 mt-3 mb-2">
+  <div class="w-75 mt-3 mb-2">
     <img class="img-fluid" src="{{ asset('images/logo.png') }}" alt="logo">
   </div>
 </div><!-- Here Logo Ends -->
