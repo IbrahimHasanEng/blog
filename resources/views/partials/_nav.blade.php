@@ -69,12 +69,12 @@
         <a class="nav-item nav-link {{ Request::is('blog') ? "active" : "" }}" href="/blog">مقالاتنا</a>
         <a class="nav-item nav-link {{ Request::is('contact') ? "active" : "" }}" href="/contact">تواصل معنا</a>
     </div>
-    <ul class="btn-group mr-auto my-0 navbar-nav" dir="ltr">
+    <ul class="btn-group mr-auto my-0 navbar-nav">
       @if (Auth::guest())
           <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">تسجيل الدخول</a></li>
       @else
       <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">!أهلاً {{ substr((Auth::user()->name), 0, strpos(Auth::user()->name, ' ')) }} <i class="fa fa-chevron-down fa-fw"></i></a>
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">مرحباً {{ Auth::user()->name }} <i class="fa fa-chevron-down fa-fw"></i></a>
         <div class="dropdown-menu dropdown-menu-left text-center animated" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{{ route('posts.create') }}">إنشاء مقال جديد</a>
           <a class="dropdown-item" href="{{ route('posts.index') }}">المقالات</a>

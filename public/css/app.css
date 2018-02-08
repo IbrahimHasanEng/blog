@@ -10315,6 +10315,14 @@ h6 {
   }
 }
 
+.side-menu {
+  border-left: 1px solid #eee;
+}
+
+.side-menu .nav a {
+  border-bottom: 1px solid #eee;
+}
+
 #showDetails {
   right: 100%;
   z-index: 0;
