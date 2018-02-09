@@ -18,23 +18,26 @@ date_default_timezone_set('Europe/Istanbul');
 
   </head>
 
-  <body style="text-align: right;">
+  <body class="bg-light" style="text-align: right;">
 
-    @include('partials._nav')
+    @include('partials._manage-nav')
     @yield('fixed')
 
-    <div class="container-fluid pt-5">
+    <div class="container-fluid py-4">
       <div class="row">
-        @include('partials._manage-nav')
+        @include('partials._manage-sidebar')
         <div class="col-10">
           @include('partials._messages')
-          @yield('content')
+          
+          <div class="card">
+              <div class="card-body">
+                  @yield('content')
+              </div>
+            </div>
         </div>
 
       </div>
     </div><!-- End of Container -->
-
-    @include('partials._footer')
 
     @include('partials._scripts')
 

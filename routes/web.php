@@ -27,6 +27,7 @@ Auth::routes();
 Route::prefix('manage')->middleware('role:superadministrator|administrator|editor|author|contibutor')->group(function() {
     Route::get('/', 'ManageController@index');
     Route::get('/dashboard', 'ManageController@dashboard')->name('manage.dashboard');
+    Route::resource('/users', 'UserController');
     Route::resource('/posts', 'PostController');
     Route::resource('/categories', 'CategoryController', ['except' => ['create']]);
     Route::resource('/tags', 'TagController', ['except' => ['create']]);

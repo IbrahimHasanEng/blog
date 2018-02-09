@@ -76,10 +76,7 @@
       <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">مرحباً {{ Auth::user()->name }} <i class="fa fa-chevron-down fa-fw"></i></a>
         <div class="dropdown-menu dropdown-menu-left text-center animated" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ route('posts.create') }}">إنشاء مقال جديد</a>
-          <a class="dropdown-item" href="{{ route('posts.index') }}">المقالات</a>
-          <a class="dropdown-item" href="{{ route('categories.index') }}">الأقسام</a>
-          <a class="dropdown-item" href="{{ route('tags.index') }}">الوسوم</a>
+          <a class="dropdown-item" href="{{ route('manage.dashboard') }}">إدارة الموقع</a>
           <div class="dropdown-divider"></div>
           <a href="{{ route('logout') }}" class="dropdown-item"
               onclick="event.preventDefault();document.getElementById('logout-form').submit();">

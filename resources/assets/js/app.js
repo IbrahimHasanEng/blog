@@ -50,6 +50,11 @@ $(function () {
     $("#showDetails").fadeOut();
   });
 
+  // $("#showPostControls").click(function(e) {
+  //   e.preventDefault();
+  //   $(".indent-list-group-item").slideToggle();
+  // });
+
   $("input[type=file]").change(function () {
     var fieldVal = $(this).val();
   

@@ -1,11 +1,31 @@
-.side-menu {
-    border-left: 1px solid #eee;
+.card {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    @include transition(box-shadow, 0.3s);
+    border: 0;
 
-    .nav {
+    &:hover {
+        box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
 
-        a {
-            border-bottom: 1px solid #eee;
+    .list-group {
+        border: 0;
+    
+        .list-group-item {
+            border: 0;
         }
-
+        
+        .list-group-item.active {
+            z-index: 0;
+        }
+        
+        .list-group-label {
+            font-weight: 600;
+            padding: 0.75rem 1.25rem;
+            margin-bottom: -1px;
+        }
+        
+        .indent-list-group-item {
+            text-indent: 1rem;
+        }
     }
 }

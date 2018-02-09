@@ -53,5 +53,13 @@
 @endsection
 
 @section('scripts')
+<script>
+  /* function showDetails() {
+    $('#postDetails').fadeIn().delay(2000).fadeOut();
+  }
 
+  $(document).one('scroll', function() {
+    showDetails();
+  }); */
+</script>
 @endsection

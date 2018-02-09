@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.manage')
 
 @section('title', ' - جميع المقالات')
 
@@ -26,7 +26,7 @@
         @foreach($posts as $post)
           <tr>
             <th scope="row">{{ $post->id }}</th>
-            <td>{{ $post->title }}</td>
+            <td><a href="{{ route('posts.show', $post->id) }}">{{ mb_substr($post->title, 0, 40) }}{{ strlen($post->title) > 40 ? "..." : "" }}</a></td>
             <td>{{ $post->category->name }}</td>
             <td>
               <?php $count = 0; ?>
@@ -41,8 +41,7 @@
               @endforeach
             </td>
             <td>{{ Date::parse(strtotime($post->created_at))->format('j F، Y') }}</td>
-            <td>
-              <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success btn-sm">عرض</a> 
+            <td> 
               <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary btn-sm">تعديل</a> 
               {!! Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
               <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDelete{{ $post->id }}">
