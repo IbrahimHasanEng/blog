@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header d-flex justify-content-between">
                 <h5 class="modal-title" id="modalTitle">{{ $title }}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin: -1rem auto -1rem 1rem;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin: -0.5rem auto -1rem 1rem;">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>

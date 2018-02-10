@@ -17,8 +17,22 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
-const app = new Vue({
-    el: '#app'
+new Vue({
+    el: '#vueApp',
+    data: {
+      name: 'أبو البر الوحش',
+      job: 'مهندس',
+      website: 'http://www.ibrahim-hasan.com/',
+      myhtml: '<h1>نبع الحياة</h1>'
+    },
+    methods: {
+      greet: function(target) {
+        return `مرحباً يا ${target}، مرسلة من ${this.name}`;
+      },
+      realname: function() {
+        this.name = 'ابراهيم محمد حسن'
+      }
+    }
 });
 
 $(function () {
@@ -67,4 +81,8 @@ $(function () {
     }
   
   });
+});
+
+$(window).on( "load", function() {
+  $('#message-drawer').animate({top: '55px', opacity: '10'}, "slow").delay(3000).animate({top: '-100px', opacity: '0'}, "slow");
 });

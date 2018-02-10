@@ -16,12 +16,12 @@
     @yield('fixed')
 
     <div class="container-fluid py-4">
-      <div class="row">
+      <div class="row flex-wrap">
         @include('partials._manage-sidebar')
-        <div class="col-9">
+        <div class="col-lg-9 col-12">
           @include('partials._messages')
           
-          <div class="card">
+          <div class="card" id="vueApp">
             <div class="card-body">
                 @yield('content')
             </div>

@@ -28,6 +28,7 @@ Route::prefix('manage')->middleware('role:superadministrator|administrator|edito
     Route::get('/', 'ManageController@index');
     Route::get('/dashboard', 'ManageController@dashboard')->name('manage.dashboard');
     Route::resource('/users', 'UserController');
+    Route::resource('/permissions', 'PermissionController');
     Route::resource('/posts', 'PostController');
     Route::resource('/categories', 'CategoryController', ['except' => ['create']]);
     Route::resource('/tags', 'TagController', ['except' => ['create']]);

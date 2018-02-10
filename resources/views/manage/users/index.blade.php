@@ -10,7 +10,7 @@
     <hr>
   <div class="row">
     <div class="col-12">
-      <table class="table table-hover">
+      <table class="table table-hover table-lg-responsive">
         <thead>
           <tr>
             <th scope="col">#</th>

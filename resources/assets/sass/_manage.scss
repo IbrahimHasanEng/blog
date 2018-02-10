@@ -8,11 +8,6 @@
     }
 
     .list-group {
-        border: 0;
-    
-        .list-group-item {
-            border: 0;
-        }
         
         .list-group-item.active {
             z-index: 0;
@@ -26,6 +21,16 @@
         
         .indent-list-group-item {
             text-indent: 1rem;
+        }
+    }
+
+    .img-thumbnail {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+        @include transition(box-shadow, 0.3s);
+        border: 0;
+    
+        &:hover {
+            box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
         }
     }
 }
