@@ -8,6 +8,9 @@
     @foreach($posts as $post)
       <div class="col-4 mb-4">
         <div class="card h-100">
+          @if(isset($post->image))
+          <img class="card-img-top" src="{{ asset('images/featured/' . $post->image) }}" alt="Card image cap">
+          @endif
           <div class="card-body d-flex flex-column justify-content-between">
             <div>
               <small>{{ Date::parse(strtotime($post->created_at))->format('j F، Y') }}</small>
@@ -15,7 +18,11 @@
               <h6 class="card-subtitle mb-2 text-muted">ابراهيم حسن</h6>
               <hr>
             </div>
-            <p class="card-text">{!! mb_substr(strip_tags($post->body), 0, 90) !!}{{ strlen(strip_tags($post->body)) > 90 ? "..." : "" }}</p>
+            @if(isset($post->image))
+            <p class="card-text">{!! str_limit(strip_tags($post->body), 70, '...') !!}</p>
+            @else
+            <p class="card-text">{!! str_limit(strip_tags($post->body), 400, '...') !!}</p>
+            @endif
             <div>
               <hr>
               <a href="{{ route('blog.single', $post->id) }}" class="btn btn-primary btn-sm">اقرأ المزيد</a>

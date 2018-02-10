@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Jenssegers\Date\Date;
 use App\Category;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
+        Date::setLocale('ar');
 
         view()->composer('partials._footer', function($view) {
             $categories = Category::all();

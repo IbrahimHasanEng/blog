@@ -3,11 +3,14 @@
 @section('title', '- إدارة مستخدمي الموقع')
 
 @section('content')
-    <h2>إدارة مستخدمي الموقع</h2>
+    <div class="d-flex justify-content-between align-items-center">
+      <h1>إدارة المستخدمين</h1>
+      <a href="{{ route('users.create') }}" class="btn btn-success btn-lg">إنشاء مستخدم جديد</a>
+    </div>
     <hr>
   <div class="row">
     <div class="col-12">
-      <table class="table table-striped">
+      <table class="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>

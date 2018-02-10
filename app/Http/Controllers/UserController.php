@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Role;
+use Hash;
+use Session;
 
 class UserController extends Controller
 {
@@ -27,6 +30,8 @@ class UserController extends Controller
     public function create()
     {
         //
+        $roles = Role::all();
+        return view('manage.users.create')->withRoles($roles);
     }
 
     /**
@@ -38,6 +43,24 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users'
+        ]);
+
+        $user = new User;
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+
+        $user->save();
+
+        $user->attachRole($request->role);
+
+        Session::flash('success', 'تم إضافة المستخدم الجديد!');
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -49,6 +72,9 @@ class UserController extends Controller
     public function show($id)
     {
         //
+        $user = User::find($id);
+
+        return view('manage.users.show')->withUser($user);
     }
 
     /**
@@ -60,6 +86,9 @@ class UserController extends Controller
     public function edit($id)
     {
         //
+        $user = User::find($id);
+        $roles = Role::all();
+        return view('manage.users.edit')->withUser($user)->withRoles($roles);
     }
 
     /**
@@ -72,6 +101,24 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users,email,'.$id
+        ]);
+
+        $user = User::find($id);
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+
+        $user->save();
+
+        $user->attachRole($request->role);
+
+        Session::flash('success', 'تم تحديث بيانات المستخدم بنجاح!');
+
+        return redirect()->route('users.show', $user->id);
     }
 
     /**

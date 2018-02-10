@@ -5,13 +5,13 @@
 @section('content')
 
   <div class="d-flex justify-content-between align-items-center">
-    <h1>جميع المقالات</h1>
+    <h1>إدارة المقالات</h1>
     <a href="{{ route('posts.create') }}" class="btn btn-success btn-lg">إنشاء مقال جديد</a>
   </div>
   <hr>
   <div class="row">
     <div class="col-12 m-auto">
-      <table class="table table-striped">
+      <table class="table table-hover">
         <thead>
           <tr>
             <th scope="col">#</th>
