@@ -119,6 +119,8 @@ class PermissionController extends Controller
     public function edit($id)
     {
         //
+        $permission = Permission::find($id);
+        return view('manage.permissions.edit')->withPermission($permission);
     }
 
     /**
@@ -131,6 +133,27 @@ class PermissionController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $permission = Permission::find($id);
+
+        $this->validate($request, [
+            'name' => 'required|min:3|max:255',
+            'display_name' => ['required', 'min:3', 'max:255', new ArabicString],
+            'description' => ['nullable', 'min:3', 'max:255', new ArabicString]
+        ]);
+
+
+        $permission->name = $request->name;
+        $permission->display_name = $request->display_name;
+        if($request->has('description')) {
+            $permission->description = $request->description;
+        }
+
+        $permission->save();
+
+        Session::flash('success', 'تم حفظ التعديلات بنجاح!');
+
+        return redirect()->route('permissions.index');
     }
 
     /**

@@ -11360,25 +11360,25 @@ window.Vue = __webpack_require__(37);
 
 Vue.component('example-component', __webpack_require__(40));
 
-new Vue({
-  el: '#vueApp',
-  data: {
-    permissionType: 'simple',
-    resource: '',
-    resourceInArabic: '',
-    crudType: ['create', 'read']
-  },
-  methods: {
-    inArray: function inArray(crud) {
-      for (var i = 0; i < this.crudType.length; i++) {
-        if (this.crudType[i] == crud) {
-          return true;
-        }
-      }
-      return false;
-    }
-  }
-});
+// new Vue({
+//     el: '#vueApp',
+//     data: {
+//       permissionType: 'simple',
+//       resource: '',
+//       resourceInArabic: '',
+//       crudType: ['create', 'read']
+//     },
+//     methods: {
+//       inArray: function(crud){
+//         for(var i=0; i < this.crudType.length; i++){
+//           if( this.crudType[i] == crud){
+//             return true
+//           }
+//         }
+//         return false
+//       }
+//     }
+// });
 
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();

@@ -6,7 +6,7 @@
 
     <div class="control-group">
         <div class="form-check form-check-inline">
-            <input v-model="permissionType" class="form-check-input" type="radio" name="permissionType" id="simplePermission" value="simple" checked>
+            <input v-model="permissionType" class="form-check-input" type="radio" name="permissionType" id="simplePermission" value="simple">
             <label class="form-check-label" for="simplePermission">
                 صلاحية واحدة
             </label>
@@ -107,26 +107,26 @@
                         <th scope="col">الشرح</th>
                     </tr>
                 </thead>
-                <tbody v-show="resource.length > 3 || resourceInArabic.length > 3">
+                <tbody v-show="resource.length > 2 || resourceInArabic.length > 2">
                     <tr v-if="inArray('create')">
-                        <td><span v-show="resource.length > 3">create-@{{ resource }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 3">إنشاء @{{ resourceInArabic }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 3">تعطي هذه الصلاحية المستخدمين القدرة على إنشاء @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resource.length > 2">create-@{{ resource }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">إنشاء @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية المستخدمين القدرة على إنشاء @{{ resourceInArabic }}</span></td>
                     </tr>
                     <tr v-if="inArray('read')">
-                        <td><span v-show="resource.length > 3">read-@{{ resource }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 3">قراءة @{{ resourceInArabic }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 3">تعطي هذه الصلاحية المستخدمين القدرة على قراءة @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resource.length > 2">read-@{{ resource }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">قراءة @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية المستخدمين القدرة على قراءة @{{ resourceInArabic }}</span></td>
                     </tr>
                     <tr v-if="inArray('update')">
-                        <td><span v-show="resource.length > 3">update-@{{ resource }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 3">تعديل @{{ resourceInArabic }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 3">تعطي هذه الصلاحية المستخدمين القدرة على تعديل @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resource.length > 2">update-@{{ resource }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">تعديل @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية المستخدمين القدرة على تعديل @{{ resourceInArabic }}</span></td>
                     </tr>
                     <tr v-if="inArray('delete')">
-                        <td><span v-show="resource.length > 3">delete-@{{ resource }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 3">حذف @{{ resourceInArabic }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 3">تعطي هذه الصلاحية المستخدمين القدرة على حذف @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resource.length > 2">delete-@{{ resource }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">حذف @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية المستخدمين القدرة على حذف @{{ resourceInArabic }}</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -134,5 +134,30 @@
     </div>
     <button type="submit" class="btn btn-primary">إنشاء</button>
 </form>
+@endsection
+
+
+@section('scripts')
+<script>
+new Vue({
+    el: '#vueApp',
+    data: {
+        permissionType: 'simple',
+        resource: '',
+        resourceInArabic: '',
+        crudType: ['create', 'read']
+    },
+    methods: {
+        inArray: function(crud){
+        for(var i=0; i < this.crudType.length; i++){
+            if( this.crudType[i] == crud){
+            return true
+            }
+        }
+        return false
+        }
+    }
+});
+</script>
 @endsection
                 

@@ -18,7 +18,7 @@
             <th scope="col">الاسم المرئي</th>
             <th scope="col">الشرح</th>
             <th scope="col">تاريخ الإنشاء</th>
-            {{--  <th scope="col">الأدوات</th>  --}}
+            <th scope="col">الأدوات</th>
           </tr>
         </thead>
         <tbody>
@@ -33,7 +33,7 @@
                 {{ $permission->description }}
             </td>
             <td>{{ Date::parse(strtotime($permission->created_at))->format('j F، Y') }}</td>
-            {{--  <td>
+            <td>
                 <a href="{{ route('permissions.edit', $permission->id) }}" class="btn btn-primary btn-sm">تعديل</a> 
                 @if($permission->id !== 1)
                     {!! Form::open(['route' => ['permissions.destroy', $permission->id], 'method' => 'DELETE', 'onsubmit' => 'return ConfirmDelete()', 'class' => 'd-inline-block']) !!}
@@ -44,7 +44,7 @@
                     @include('partials._confirm-delete', ['title' => 'تأكيد حذف المستخدم', 'question' => 'هل أنت متأكد أنك تريد حذف المستخدم &#x27;' . $permission->name . '&#x27;؟', 'idSuffex' => $permission->id])
                     {!! Form::close() !!}
                 @endif
-            </td>  --}}
+            </td>
           </tr>
         @endforeach
         </tbody>
