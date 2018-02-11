@@ -20,17 +20,19 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 new Vue({
     el: '#vueApp',
     data: {
-      name: 'أبو البر الوحش',
-      job: 'مهندس',
-      website: 'http://www.ibrahim-hasan.com/',
-      myhtml: '<h1>نبع الحياة</h1>'
+      permissionType: 'simple',
+      resource: '',
+      resourceInArabic: '',
+      crudType: ['create', 'read']
     },
     methods: {
-      greet: function(target) {
-        return `مرحباً يا ${target}، مرسلة من ${this.name}`;
-      },
-      realname: function() {
-        this.name = 'ابراهيم محمد حسن'
+      inArray: function(crud){
+        for(var i=0; i < this.crudType.length; i++){
+          if( this.crudType[i] == crud){
+            return true
+          }
+        }
+        return false
       }
     }
 });

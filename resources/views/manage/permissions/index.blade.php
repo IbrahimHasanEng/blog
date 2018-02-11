@@ -1,11 +1,11 @@
 @extends('layouts.manage')
 
-@section('title', '- إدارة السماحيات')
+@section('title', '- إدارة الصلاحيات')
 
 @section('content')
     <div class="d-flex justify-content-between align-items-center">
-      <h1>إدارة السماحيات</h1>
-      <a href="{{ route('permissions.create') }}" class="btn btn-success btn-lg">إنشاء سماحية جديد</a>
+      <h1>إدارة الصلاحيات</h1>
+      <a href="{{ route('permissions.create') }}" class="btn btn-success btn-lg">إنشاء صلاحيات جديدة</a>
     </div>
     <hr>
   <div class="row">
@@ -14,7 +14,7 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">السماحية</th>
+            <th scope="col">الصلاحية</th>
             <th scope="col">الاسم المرئي</th>
             <th scope="col">الشرح</th>
             <th scope="col">تاريخ الإنشاء</th>

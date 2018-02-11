@@ -11363,17 +11363,19 @@ Vue.component('example-component', __webpack_require__(40));
 new Vue({
   el: '#vueApp',
   data: {
-    name: 'أبو البر الوحش',
-    job: 'مهندس',
-    website: 'http://www.ibrahim-hasan.com/',
-    myhtml: '<h1>نبع الحياة</h1>'
+    permissionType: 'simple',
+    resource: '',
+    resourceInArabic: '',
+    crudType: ['create', 'read']
   },
   methods: {
-    greet: function greet(target) {
-      return '\u0645\u0631\u062D\u0628\u0627\u064B \u064A\u0627 ' + target + '\u060C \u0645\u0631\u0633\u0644\u0629 \u0645\u0646 ' + this.name;
-    },
-    realname: function realname() {
-      this.name = 'ابراهيم محمد حسن';
+    inArray: function inArray(crud) {
+      for (var i = 0; i < this.crudType.length; i++) {
+        if (this.crudType[i] == crud) {
+          return true;
+        }
+      }
+      return false;
     }
   }
 });

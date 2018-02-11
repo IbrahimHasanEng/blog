@@ -12061,6 +12061,35 @@ h6 {
   word-wrap: break-word;
 }
 
+.control-group {
+  margin: 10px 0 30px 0;
+}
+
+.form-check {
+  margin-bottom: 10px;
+}
+
+.form-check-label {
+  margin-right: 5px;
+}
+
+.form-check-inline .form-check-input {
+  position: relative;
+}
+
+input[type="checkbox"]:checked:before,
+.checkbox input[type="checkbox"]:checked:before,
+.checkbox-inline input[type="checkbox"]:checked:before,
+input[type="checkbox"]:after,
+.checkbox input[type="checkbox"]:after,
+.checkbox-inline input[type="checkbox"]:after {
+  margin-left: 20px;
+}
+
+.form-group .text-danger {
+  margin-top: 10px;
+}
+
 .footer {
   min-height: 425px;
   background: #1b1b1b;

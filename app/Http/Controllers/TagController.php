@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Rules\ArabicString;
 use App\Tag;
 use App\Post;
 use Session;
@@ -36,7 +37,7 @@ class TagController extends Controller
     {
         //
         $this->validate($request, [
-            'name' => 'required|max:255'
+            'name' => ['required', new ArabicString, 'max:255']
         ]);
 
         $tag = new Tag;
