@@ -18,7 +18,7 @@
             </label>
         </div>
     </div>
-<form id="simple" v-if="permissionType == 'simple'" action="{{ route('permissions.create') }}" method="POST" novalidate>
+<form id="simple" v-if="permissionType == 'simple'" action="{{ route('permissions.store') }}" method="POST" novalidate>
         {{ csrf_field() }}
     <div class='form-group'>
         <label for="name">الصلاحية</label>
@@ -51,15 +51,25 @@
 </form>
 
 
-<form id="crud" v-if="permissionType == 'crud'" action="{{ route('permissions.create') }}" method="POST" novalidate>
+<form id="crud" v-if="permissionType == 'crud'" action="{{ route('permissions.store') }}" method="POST" novalidate>
         {{ csrf_field() }}
     <div class='form-group'>
-        <label for="name">المورد المرغوب إضافة صلاحيات له</label>
-        <input v-model="resource" type="text" id="name" class="form-control" name="name" value="{{ old('name') }}" placeholder="اكتب اسم المورد الذي ترغب بإضافة صلاحيات له باللغة الإنكليزية">
+        <label for="resource">المورد المرغوب إضافة صلاحيات له</label>
+        <input v-model="resource" type="text" id="resource" class="form-control" name="resource" value="{{ old('resource') }}" placeholder="اكتب اسم المورد الذي ترغب بإضافة صلاحيات له باللغة الإنكليزية">
+        @if($errors->has('resource'))
+            <div class="text-danger">
+                <strong>{{ $errors->first('resource') }}</strong>
+            </div>
+        @endif
     </div>
     <div class="form-group">
-        <label for="display_name">اسم المورد باللغة العربية</label>
-        <input v-model="resourceInArabic" type="text" id="display_name" class="form-control" name="display_name" value="{{ old('display_name') }}" placeholder="اكتب اسم المورد باللغة العربية">
+        <label for="resourceInArabic">اسم المورد باللغة العربية</label>
+        <input v-model="resourceInArabic" type="text" id="resourceInArabic" class="form-control" name="resourceInArabic" value="{{ old('resourceInArabic') }}" placeholder="اكتب اسم المورد باللغة العربية">
+        @if($errors->has('resourceInArabic'))
+            <div class="text-danger">
+                <strong>{{ $errors->first('resourceInArabic') }}</strong>
+            </div>
+        @endif
     </div>
     <div class="row">
         <div class="col-2">

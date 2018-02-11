@@ -142,5 +142,8 @@ return [
         'size'                  => 'الحجم',
         'message'               => 'نص الرسالة',
         'subject'               => 'عنوان الرسالة',
+        'resource'              => 'المورد',
+        'resourceInArabic'      => 'المورد باللغة العربية',
+        'display_name'          => 'الاسم المرئي',
     ],
 ];
