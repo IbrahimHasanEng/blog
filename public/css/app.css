@@ -11962,6 +11962,66 @@ h6 {
           box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
+#inputFile {
+  display: none;
+}
+
+.custom-file-label {
+  padding: 1rem 6rem;
+}
+
+.select2-container {
+  -webkit-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5);
+          box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.select2-container:focus {
+  -webkit-box-shadow: inset 0 -2px 0 #fff;
+          box-shadow: inset 0 -2px 0 #fff;
+}
+
+.select2-container::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.select2-container:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.select2-container::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.select2-container::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.select2-container .select2-selection {
+  height: 57.3px;
+  border: 1px solid #cfd5d8;
+}
+
+.select2-container .select2-selection .select2-search {
+  height: 100%;
+}
+
+.select2-container .select2-selection .select2-search .select2-search__field {
+  height: 100%;
+  margin: 0;
+}
+
+.select2-container .select2-selection ul {
+  height: 96%;
+  padding: 2%;
+}
+
+.select2-container .select2-selection ul li.select2-selection__choice {
+  margin: 5px;
+  height: 85%;
+  padding: 12px 8px;
+  background-color: #eee;
+}
+
 #showDetails {
   right: 100%;
   z-index: 0;

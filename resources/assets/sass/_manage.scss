@@ -34,3 +34,49 @@
         }
     }
 }
+
+#inputFile {
+    display: none;
+}
+
+.custom-file-label {
+    padding: 1rem 6rem;
+}
+
+.select2-container {
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5);
+
+    &:focus {
+      box-shadow: inset 0 -2px 0 #fff;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .select2-selection {
+        height: 57.3px;
+        border: 1px solid #cfd5d8;
+
+        .select2-search {
+            height: 100%;
+
+            .select2-search__field {
+                height: 100%;
+                margin: 0;
+            }
+        }
+
+        ul {
+            height: 96%;
+            padding: 2%;
+
+            li.select2-selection__choice {
+                margin: 5px;
+                height: 85%;
+                padding: 12px 8px;
+                background-color: #eee;
+            }
+        }
+    }
+  }

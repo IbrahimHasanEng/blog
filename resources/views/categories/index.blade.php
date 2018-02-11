@@ -60,7 +60,7 @@
                     <div class="col-12">
                         {!! Form::open(['route' => 'categories.store', 'method' => 'POST']) !!}
                         <div class="form-group">
-                        {{ Form::text('name', null, ['class' => 'form-control', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'أدخل اسماً معرفاً من فضلك']) }}
+                        {{ Form::text('name', null, ['class' => 'form-control', 'data-toggle' => 'tooltip', 'data-placement' => 'top', 'title' => 'أدخل اسماً معرفاً من فضلك', 'placeholder' => 'اكتب اسم القسم هنا']) }}
                         @if ($errors->has('name'))
                             <div class="text-danger">
                                 <strong>{{ $errors->first('name') }}</strong>

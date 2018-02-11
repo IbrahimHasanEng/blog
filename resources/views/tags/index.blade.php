@@ -61,7 +61,7 @@
                     <div class="col-12">
                         {!! Form::open(['route' => 'tags.store', 'method' => 'POST']) !!}
                         <div class="form-group">
-                            {{ Form::text('name', null, ['class' => 'form-control']) }} 
+                            {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'اكتب اسم الوسم هنا']) }} 
                             @if ($errors->has('name'))
                             <div class="text-danger">
                                 <strong>{{ $errors->first('name') }}</strong>
