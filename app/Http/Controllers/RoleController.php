@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Rules\ArabicString;
 use App\Permission;
 use Session;
 use App\Role;
@@ -29,6 +30,8 @@ class RoleController extends Controller
     public function create()
     {
         //
+        $permissions = Permission::all();
+        return view('manage.roles.create')->withPermissions($permissions);
     }
 
     /**
@@ -40,6 +43,26 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         //
+        
+
+        $this->validate($request, [
+            'name' => 'required|min:3|max:355',
+            'display_name' => ['required', 'min:3', 'max:255', new ArabicString],
+            'description' => 'required|min:3|max:255'
+        ]);
+        $role = new Role;
+
+        $role->name = $request->name;
+        $role->display_name = $request->display_name;
+        $role->description = $request->description;
+        
+        $role->save();
+
+        $role->permissions()->sync($request->permissions);
+        
+        Session::flash('success', 'تم حفظ التعديلات بنجاح');
+
+        return redirect()->route('roles.show', $role->id);
     }
 
     /**

@@ -5,29 +5,28 @@
 @section('content')
 
 <h1>
-    تعديل الدور
+    إنشاء دور جديد
 </h1>
 
 <hr>
-<form action="{{ route('roles.update', $role->id) }}" method="POST" novalidate>
+<form action="{{ route('roles.store') }}" method="POST" novalidate>
     {{ csrf_field() }}
-    {{ method_field('PUT') }}
     <div class="row">
 
         <div class="col-6">
             <div class="form-group">
-                <label for="name">الدور <small class="text-secondary">لا يمكن تغيير هذه القيمة</small></label>
-                <input type="text" name="name" id="name" value="{{ $role->name }}" class="form-control" disabled>
+                <label for="name">الدور <small class="text-secondary"> لا يمكن تغيير هذه القيمة إنشائها</small></label>
+                <input type="text" name="name" id="name" value="{{ old('name') }}" class="form-control" placeholder="اكتب اسم الدور الذي ترغب بإضافته باللغة الإنكليزية">
             </div>
 
             <div class="form-group">
                 <label for="display_name">الاسم المرئي</label>
-                <input type="text" name="display_name" id="display_name" value="{{ $role->display_name }}" class="form-control">
+                <input type="text" name="display_name" id="display_name" value="{{ old('display_name') }}" class="form-control" placeholder="اكتب اسم الدور باللغة العربية">
             </div>
 
             <div class="form-group">
                 <label for="description">الوصف</label>
-                <textarea name="description" id="description" class="form-control" style="min-height: 200px">{{ $role->description }}</textarea>
+                <textarea name="description" id="description" class="form-control" style="min-height: 200px" placeholder="اكتب وصف الدور">{{ old('description') }}</textarea>
             </div>
         </div>
 
@@ -63,7 +62,7 @@
 new Vue({
     el: '#vueApp',
     data: {
-        selectedPermissions: {!! $role->permissions->pluck("id") !!}
+        selectedPermissions: []
     },
     methods: {
 
