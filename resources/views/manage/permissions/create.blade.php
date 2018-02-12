@@ -39,8 +39,8 @@
         @endif
     </div>
     <div class="form-group">
-        <label for="description">الشرح</label>
-        <input type="text" id="description" class="form-control" name="description" value="{{ old('description') }}" placeholder="اكتب شرح الصلاحية">
+        <label for="description">الوصف</label>
+        <input type="text" id="description" class="form-control" name="description" value="{{ old('description') }}" placeholder="اكتب وصف الصلاحية">
         @if($errors->has('description'))
             <div class="text-danger">
                 <strong>{{ $errors->first('description') }}</strong>
@@ -82,7 +82,7 @@
             <div class="form-check">
                 <input v-model="crudType" class="form-check-input" type="checkbox" name="crud_type[]" value="read" id="read">
                 <label class="form-check-label" for="read">
-                    قراءة
+                    عرض
                 </label>
             </div>
             <div class="form-check">
@@ -104,29 +104,29 @@
                     <tr>
                         <th scope="col">الصلاحية</th>
                         <th scope="col">الاسم المرئي</th>
-                        <th scope="col">الشرح</th>
+                        <th scope="col">الوصف</th>
                     </tr>
                 </thead>
                 <tbody v-show="resource.length > 2 || resourceInArabic.length > 2">
                     <tr v-if="inArray('create')">
                         <td><span v-show="resource.length > 2">create-@{{ resource }}</span></td>
                         <td><span v-show="resourceInArabic.length > 2">إنشاء @{{ resourceInArabic }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية المستخدمين القدرة على إنشاء @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية من يمتلكها القدرة على إنشاء @{{ resourceInArabic }}</span></td>
                     </tr>
                     <tr v-if="inArray('read')">
                         <td><span v-show="resource.length > 2">read-@{{ resource }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 2">قراءة @{{ resourceInArabic }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية المستخدمين القدرة على قراءة @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">عرض @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية من يمتلكها القدرة على عرض @{{ resourceInArabic }}</span></td>
                     </tr>
                     <tr v-if="inArray('update')">
                         <td><span v-show="resource.length > 2">update-@{{ resource }}</span></td>
                         <td><span v-show="resourceInArabic.length > 2">تعديل @{{ resourceInArabic }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية المستخدمين القدرة على تعديل @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية من يمتلكها القدرة على تعديل @{{ resourceInArabic }}</span></td>
                     </tr>
                     <tr v-if="inArray('delete')">
                         <td><span v-show="resource.length > 2">delete-@{{ resource }}</span></td>
                         <td><span v-show="resourceInArabic.length > 2">حذف @{{ resourceInArabic }}</span></td>
-                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية المستخدمين القدرة على حذف @{{ resourceInArabic }}</span></td>
+                        <td><span v-show="resourceInArabic.length > 2">تعطي هذه الصلاحية من يمتلكها القدرة على حذف @{{ resourceInArabic }}</span></td>
                     </tr>
                 </tbody>
             </table>
@@ -142,7 +142,7 @@
 new Vue({
     el: '#vueApp',
     data: {
-        permissionType: localStorage.getItem("permissionType"),
+        permissionType: sessionStorage.getItem("permissionType"),
         resource: '',
         resourceInArabic: '',
         crudType: ['create', 'read']
@@ -158,11 +158,11 @@ new Vue({
         },
 
         changePermissionTypeToCrud: function() {
-            return localStorage.setItem("permissionType", "crud");
+            return sessionStorage.setItem("permissionType", "crud");
         },
 
         changePermissionTypeToSimple: function() {
-            return localStorage.setItem("permissionType", "simple");
+            return sessionStorage.setItem("permissionType", "simple");
         }
     }
 });

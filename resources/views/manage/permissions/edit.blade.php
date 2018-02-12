@@ -26,8 +26,8 @@
         @endif
     </div>
     <div class="form-group">
-        <label for="description">الشرح</label>
-        <input type="text" id="description" class="form-control" name="description" value="{{ $permission->description }}" placeholder="اكتب شرح الصلاحية">
+        <label for="description">الوصف</label>
+        <input type="text" id="description" class="form-control" name="description" value="{{ $permission->description }}" placeholder="اكتب وصف الصلاحية">
         @if($errors->has('description'))
             <div class="text-danger">
                 <strong>{{ $errors->first('description') }}</strong>

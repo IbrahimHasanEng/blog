@@ -72,7 +72,7 @@ class PermissionController extends Controller
 
                 $crud_arabic = [
                     'create' => 'إنشاء',
-                    'read' => 'قراءة',
+                    'read' => 'عرض',
                     'update' => 'تعديل',
                     'delete' => 'تحديث'
                 ];
@@ -85,7 +85,7 @@ class PermissionController extends Controller
 
                     $permission->display_name = $crud_arabic[$x] . ' ' . $request->resourceInArabic;
 
-                    $permission->description = 'تعطي هذه الصلاحية المستخدمين القدرة على ' . $crud_arabic[$x] . ' ' . $request->resourceInArabic;
+                    $permission->description = 'تعطي هذه الصلاحية من يمتلكها القدرة على ' . $crud_arabic[$x] . ' ' . $request->resourceInArabic;
 
                     $permission->save();
                 }
