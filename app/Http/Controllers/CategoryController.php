@@ -25,7 +25,7 @@ class CategoryController extends Controller
         $categories = Category::orderBy('id')->paginate(10);
         $posts = Post::all();
 
-        return view('categories.index')->withCategories($categories)->withPosts($posts);
+        return view('manage.categories.index')->withCategories($categories)->withPosts($posts);
     }
 
     /**
@@ -63,7 +63,7 @@ class CategoryController extends Controller
         //
         $category = Category::find($id);
 
-        return view('categories.show')->withCategory($category);
+        return view('manage.categories.show')->withCategory($category);
     }
 
     /**
@@ -77,7 +77,7 @@ class CategoryController extends Controller
         //
         $category = Category::find($id);
 
-        return view('categories.edit')->withCategory($category);
+        return view('manage.categories.edit')->withCategory($category);
     }
 
     /**

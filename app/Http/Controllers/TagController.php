@@ -24,7 +24,7 @@ class TagController extends Controller
         //
         $tags = Tag::orderBy('id')->paginate(10);
         $posts = Post::all();
-        return view('tags.index')->withTags($tags)->withPosts($posts);
+        return view('manage.tags.index')->withTags($tags)->withPosts($posts);
     }
 
     /**
@@ -62,7 +62,7 @@ class TagController extends Controller
         //
         $tag = Tag::find($id);
 
-        return view('tags.show')->withTag($tag);
+        return view('manage.tags.show')->withTag($tag);
     }
 
     /**
@@ -76,7 +76,7 @@ class TagController extends Controller
         //
         $tag = Tag::find($id);
 
-        return view('tags.edit')->withTag($tag);
+        return view('manage.tags.edit')->withTag($tag);
     }
 
     /**

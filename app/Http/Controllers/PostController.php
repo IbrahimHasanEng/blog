@@ -24,7 +24,7 @@ class PostController extends Controller
     {
         //
         $posts = Post::orderBy('created_at', 'desc')->paginate(5);
-        return view('posts.index')->withPosts($posts);
+        return view('manage.posts.index')->withPosts($posts);
     }
 
     /**
@@ -37,7 +37,7 @@ class PostController extends Controller
         //
         $categories = Category::all();
         $tags = Tag::all();
-        return view('posts.create')->withCategories($categories)->withTags($tags);
+        return view('manage.posts.create')->withCategories($categories)->withTags($tags);
     }
 
     /**
@@ -89,7 +89,7 @@ class PostController extends Controller
     {
         //
         $post = Post::find($id);
-        return view('posts.show')->withPost($post);
+        return view('manage.posts.show')->withPost($post);
     }
 
     /**
@@ -113,7 +113,7 @@ class PostController extends Controller
             $_tags[$tag->id] = $tag->name;
         }
 
-        return view('posts.edit')
+        return view('manage.posts.edit')
         ->withPost($post)
         ->withCategories($_categories)
         ->withTags($_tags);
