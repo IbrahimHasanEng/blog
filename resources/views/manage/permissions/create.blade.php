@@ -47,7 +47,7 @@
             </div>
         @endif
     </div>
-    <button type="submit" class="btn btn-primary">إنشاء</button>
+    <button type="submit" v-on:click="changePermissionTypeToSimple" class="btn btn-primary">إنشاء</button>
 </form>
 
 
@@ -132,7 +132,7 @@
             </table>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">إنشاء</button>
+    <button type="submit" v-on:click="changePermissionTypeToCrud" class="btn btn-primary">إنشاء</button>
 </form>
 @endsection
 
@@ -142,7 +142,7 @@
 new Vue({
     el: '#vueApp',
     data: {
-        permissionType: 'simple',
+        permissionType: localStorage.getItem("permissionType"),
         resource: '',
         resourceInArabic: '',
         crudType: ['create', 'read']
@@ -155,6 +155,14 @@ new Vue({
             }
         }
         return false
+        },
+
+        changePermissionTypeToCrud: function() {
+            return localStorage.setItem("permissionType", "crud");
+        },
+
+        changePermissionTypeToSimple: function() {
+            return localStorage.setItem("permissionType", "simple");
         }
     }
 });
